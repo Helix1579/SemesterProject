@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="467.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Homepage">
+   <children>
+      <FlowPane hgap="70.0" layoutX="13.0" layoutY="117.0" prefHeight="350.0" prefWidth="600.0" vgap="30.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
+         <children>
+            <Button fx:id="CheckInButton" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Chech-In" textAlignment="CENTER" />
+            <Button fx:id="CheckOutButton" mnemonicParsing="false" prefHeight="151.0" prefWidth="150.0" text="Check-Out" textAlignment="CENTER" />
+            <Button fx:id="CancelBookingButton" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Cancel Booking" textAlignment="CENTER" />
+            <Button fx:id="GuestListButton" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Guest List" textAlignment="CENTER" />
+            <Button fx:id="RoomsButton" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Rooms" textAlignment="CENTER" />
+            <Button fx:id="UpdateInfoButton" alignment="CENTER" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Update Guest Information" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+         </children>
+      </FlowPane>
+      <Pane prefHeight="100.0" prefWidth="619.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="CENTER" layoutX="165.0" layoutY="30.0" prefHeight="40.0" prefWidth="290.0" text="The Overlook Hotel">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="ExitButton" layoutX="492.0" layoutY="30.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="113.0" text="Exit">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
