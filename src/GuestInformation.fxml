@@ -31,10 +31,10 @@
          </font>
       </Label>
       <Label layoutX="151.0" layoutY="194.0" text="Address" />
-      <Label layoutX="155.0" layoutY="241.0" text="Phone:" />
-      <Label layoutX="130.0" layoutY="275.0" text="Date of Birth" />
-      <Label layoutX="133.0" layoutY="311.0" text="Nationality:" />
-      <Label layoutX="125.0" layoutY="355.0" text="Identity Proof:" />
+      <Label layoutX="155.0" layoutY="241.0" text="Phone Number : " />
+      <Label layoutX="130.0" layoutY="275.0" text="Date of Birth : " />
+      <Label layoutX="133.0" layoutY="311.0" text="Nationality : " />
+      <Label layoutX="125.0" layoutY="355.0" text="Identity Proof : " />
       <TextField layoutX="310.0" layoutY="203.0" />
       <TextField layoutX="316.0" layoutY="246.0" />
       <TextField layoutX="316.0" layoutY="307.0" />
