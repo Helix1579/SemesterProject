@@ -30,8 +30,7 @@ public class HomepageController
     {
         if(e.getSource() == CheckInButton)
         {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource(
-                "abc/GuestInformation.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("abc/GuestInformation.fxml"));
             rootPane.getChildren().setAll(pane);
         }
     }
