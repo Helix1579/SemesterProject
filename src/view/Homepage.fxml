@@ -12,12 +12,30 @@
    <children>
       <FlowPane hgap="70.0" layoutX="13.0" layoutY="117.0" prefHeight="333.0" prefWidth="594.0" vgap="30.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
          <children>
-            <Button fx:id="CheckInButton" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Chech-In" textAlignment="CENTER" />
-            <Button fx:id="CheckOutButton" mnemonicParsing="false" prefHeight="151.0" prefWidth="150.0" text="Check-Out" textAlignment="CENTER" />
-            <Button fx:id="CancelBookingButton" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Cancel Booking" textAlignment="CENTER" />
-            <Button fx:id="GuestListButton" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Guest List" textAlignment="CENTER" />
-            <Button fx:id="RoomsButton" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Rooms" textAlignment="CENTER" />
-            <Button fx:id="UpdateInfoButton" alignment="CENTER" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Update Guest Information" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+            <Button fx:id="CheckInButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Chech-In" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="CheckOutButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="151.0" prefWidth="150.0" text="Check-Out" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="CancelBookingButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Cancel Booking" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="GuestListButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Guest List" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="RoomsButton" contentDisplay="CENTER" layoutX="114.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Available Rooms" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="UpdateInfoButton" alignment="CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="150.0" text="Update Guest Information" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
          </children>
       </FlowPane>
       <Pane prefHeight="100.0" prefWidth="619.0">

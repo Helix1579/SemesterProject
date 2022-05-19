@@ -20,18 +20,5 @@ public class HomepageController
     @FXML private Button GuestListButton;
     @FXML private Button RoomsButton;
     @FXML private Button UpdateInfoButton;
-    @FXML private AnchorPane rootPane;
 
-    public void init(Region root)
-    {
-        this.root = root;
-    }
-    public void handleActions(ActionEvent e) throws IOException
-    {
-        if(e.getSource() == CheckInButton)
-        {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("abc/GuestInformation.fxml"));
-            rootPane.getChildren().setAll(pane);
-        }
-    }
 }
