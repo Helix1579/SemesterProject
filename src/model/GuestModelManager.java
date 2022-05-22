@@ -12,6 +12,7 @@ public class GuestModelManager
   {
     this.fileName = fileName;
   }
+
   public GuestList getAllGuest()
   {
     GuestList allGuest = new GuestList();
@@ -34,8 +35,35 @@ public class GuestModelManager
     }
     return allGuest;
   }
-  //public GuestList getGuestFromName(String name)
+  public GuestList getGuestFromName(String name)
   {
+    GuestList guestFromName = new GuestList();
+    GuestList getAllGuest = getAllGuest();
 
+    for (int i = 0; i < getAllGuest.size(); i++)
+    {
+      if (getAllGuest.get(i).getName().equals(name))
+      {
+        guestFromName.add(getAllGuest.get(i));
+      }
+    }
+    return guestFromName;
+  }
+  public void saveGuest (GuestList guests)
+  {
+    try
+    {
+      MyFileHandler.writeToBinaryFile(fileName, guests);
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File not found");
+    }
+    catch (IOException e)
+    {
+      System.out.println("IO Error writing to file");
+    }
   }
 }
+
+

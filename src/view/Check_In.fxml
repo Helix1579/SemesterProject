@@ -68,7 +68,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="NationaalityTF" layoutX="320.0" layoutY="220.0" prefHeight="25.0" prefWidth="195.0" promptText="Enter Nationality">
+      <TextField fx:id="NationalityTF" layoutX="320.0" layoutY="220.0" prefHeight="25.0" prefWidth="195.0" promptText="Enter Nationality">
          <font>
             <Font size="15.0" />
          </font>
@@ -88,13 +88,13 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <DatePicker fx:id="ChechInDP" layoutX="320.0" layoutY="280.0" prefHeight="31.0" prefWidth="195.0" promptText="Enter Date" />
+      <DatePicker fx:id="CheckInDP" layoutX="320.0" layoutY="280.0" prefHeight="31.0" prefWidth="195.0" promptText="Enter Date" />
       <Label layoutX="135.0" layoutY="313.0" prefHeight="25.0" prefWidth="150.0" text="Check-Out Date : ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <DatePicker fx:id="CHeckOutDP" layoutX="320.0" layoutY="310.0" prefHeight="31.0" prefWidth="195.0" promptText="Enter Date" />
+      <DatePicker fx:id="CheckOutDP" layoutX="320.0" layoutY="310.0" prefHeight="31.0" prefWidth="195.0" promptText="Enter Date" />
       <DatePicker fx:id="DOBDP" layoutX="320.0" layoutY="160.0" prefHeight="31.0" prefWidth="195.0" promptText="Enter D.O.B." />
       <Button fx:id="CheckInButton" layoutX="532.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Check-In">
          <font>
