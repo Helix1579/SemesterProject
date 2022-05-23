@@ -9,7 +9,7 @@ public class Guest implements Serializable
 {
   private String name;
   private String address;
-  private String dateOfBirth;
+  private LocalDate dateOfBirth;
   private String phoneNumber;
   private String nationality;
   private String idProof;
@@ -18,7 +18,7 @@ public class Guest implements Serializable
   private String roomType;
   private String roomNumber;
 
-  public Guest(String name, String address, String dateOfBirth, String phoneNumber, String nationality, String idProof,
+  public Guest(String name, String address, LocalDate dateOfBirth, String phoneNumber, String nationality, String idProof,
       LocalDate checkInDate, LocalDate checkOutDate, String roomType, String roomNumber)
   {
     this.name = name;
@@ -43,7 +43,7 @@ public class Guest implements Serializable
     return address;
   }
 
-  public String getDateOfBirth()
+  public LocalDate getDateOfBirth()
   {
     return dateOfBirth;
   }
@@ -93,7 +93,7 @@ public class Guest implements Serializable
     this.address = address;
   }
 
-  public void setDateOfBirth(String dateOfBirth)
+  public void setDateOfBirth(LocalDate dateOfBirth)
   {
     this.dateOfBirth = dateOfBirth;
   }

@@ -25,7 +25,7 @@ public class InitialData
         String[] tempArray = temp.split(" , ");
         String name = tempArray[0];
         String address = tempArray[1];
-        String dateOfBirth = tempArray[2];
+        LocalDate dateOfBirth = LocalDate.parse(tempArray[2]);
         String phoneNumber = tempArray[3];
         String nationality = tempArray[4];
         String idProof = tempArray[5];
