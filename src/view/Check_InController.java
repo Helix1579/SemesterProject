@@ -25,7 +25,7 @@ public class Check_InController
   @FXML private RadioButton NormalRB;
   @FXML private RadioButton SuiteRB;
   @FXML private ComboBox<Rooms> RoomBox;
-  @FXML private java.awt.TextField RoomNoTF;
+  @FXML private TextField RoomNoTF;
   @FXML private Button CheckInButton;
   @FXML private Button BackButton;
   @FXML private Button ExitButton;

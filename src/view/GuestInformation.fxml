@@ -61,7 +61,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="GuestNameCB" layoutX="256.0" layoutY="107.0" prefHeight="25.0" prefWidth="210.0" />
+      <ChoiceBox fx:id="GuestBox" layoutX="256.0" layoutY="107.0" prefHeight="25.0" prefWidth="210.0" />
       <Label fx:id="PhoneNumberLabel1" layoutX="155.0" layoutY="250.0" prefHeight="31.0" prefWidth="150.0" text="Check-in Date :">
          <font>
             <Font size="15.0" />
@@ -89,6 +89,6 @@
       </Label>
       <DatePicker fx:id="CheckInDP" layoutX="305.0" layoutY="250.0" onAction="#handleAction" prefHeight="31.0" prefWidth="200.0" />
       <DatePicker fx:id="CheckOutDP" layoutX="305.0" layoutY="280.0" onAction="#handleAction" prefHeight="31.0" prefWidth="200.0" />
-      <ComboBox fx:id="RoomTypeCB" layoutX="305.0" layoutY="310.0" onAction="#handleAction" prefHeight="31.0" prefWidth="200.0" />
+      <ComboBox fx:id="RoomBox" layoutX="305.0" layoutY="310.0" onAction="#handleAction" prefHeight="31.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

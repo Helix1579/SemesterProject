@@ -1,22 +1,25 @@
 package model;
 
+import javafx.scene.control.DatePicker;
+
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Guest implements Serializable
 {
   private String name;
   private String address;
   private String dateOfBirth;
-  private long phoneNumber;
+  private String phoneNumber;
   private String nationality;
-  private long idProof;
-  private String checkInDate;
-  private String checkOutDate;
+  private String idProof;
+  private LocalDate checkInDate;
+  private LocalDate checkOutDate;
   private String roomType;
-  private int roomNumber;
+  private String roomNumber;
 
-  public Guest(String name, String address, String dateOfBirth, long phoneNumber, String nationality, long idProof,
-      String checkInDate, String checkOutDate, String roomType, int roomNumber)
+  public Guest(String name, String address, String dateOfBirth, String phoneNumber, String nationality, String idProof,
+      LocalDate checkInDate, LocalDate checkOutDate, String roomType, String roomNumber)
   {
     this.name = name;
     this.address = address;
@@ -45,7 +48,7 @@ public class Guest implements Serializable
     return dateOfBirth;
   }
 
-  public long getPhoneNumber()
+  public String getPhoneNumber()
   {
     return phoneNumber;
   }
@@ -55,17 +58,17 @@ public class Guest implements Serializable
     return nationality;
   }
 
-  public long getIdProof()
+  public String getIdProof()
   {
     return idProof;
   }
 
-  public String getCheckInDate()
+  public LocalDate getCheckInDate()
   {
     return checkInDate;
   }
 
-  public String getCheckOutDate()
+  public LocalDate getCheckOutDate()
   {
     return checkOutDate;
   }
@@ -75,7 +78,7 @@ public class Guest implements Serializable
     return roomType;
   }
 
-  public int getRoomNumber()
+  public String getRoomNumber()
   {
     return roomNumber;
   }
@@ -95,7 +98,7 @@ public class Guest implements Serializable
     this.dateOfBirth = dateOfBirth;
   }
 
-  public void setPhoneNumber(long phoneNumber)
+  public void setPhoneNumber(String phoneNumber)
   {
     this.phoneNumber = phoneNumber;
   }
@@ -105,17 +108,17 @@ public class Guest implements Serializable
     this.nationality = nationality;
   }
 
-  public void setIdProof(long idProof)
+  public void setIdProof(String idProof)
   {
     this.idProof = idProof;
   }
 
-  public void setCheckInDate(String checkInDate)
+  public void setCheckInDate(LocalDate checkInDate)
   {
     this.checkInDate = checkInDate;
   }
 
-  public void setCheckOutDate(String checkOutDate)
+  public void setCheckOutDate(LocalDate checkOutDate)
   {
     this.checkOutDate = checkOutDate;
   }
@@ -125,7 +128,7 @@ public class Guest implements Serializable
     this.roomType = roomType;
   }
 
-  public void setRoomNumber(int roomNumber)
+  public void setRoomNumber(String roomNumber)
   {
     this.roomNumber = roomNumber;
   }

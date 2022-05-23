@@ -64,6 +64,10 @@ public class GuestModelManager
       System.out.println("IO Error writing to file");
     }
   }
+  public  void changeGuestInformation()
+  {
+
+  }
 }
 
 
