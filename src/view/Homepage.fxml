@@ -42,9 +42,9 @@
       </FlowPane>
       <Pane prefHeight="100.0" prefWidth="619.0">
          <children>
-            <ImageView fx:id="Logo" fitHeight="113.0" fitWidth="190.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Logo" fitHeight="119.0" fitWidth="186.0" layoutY="-2.0" pickOnBounds="true">
                <image>
-                  <Image url="@../Image/vialogoah.gif" />
+                  <Image url="@../Image/logo.jpg" />
                </image>
                <viewport>
                   <Rectangle2D />
