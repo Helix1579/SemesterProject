@@ -72,11 +72,9 @@ public class CheckOutController
     }
     else if (e.getSource() == CalcB)
     {
-
       LocalDate checkIn = CheckinDP.getValue();
       LocalDate checkOut = CheckoutDP.getValue();
       int stay = Period.between(checkIn , checkOut).getDays();
-
     }
   }
 

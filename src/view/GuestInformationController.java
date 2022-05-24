@@ -65,11 +65,11 @@ public class GuestInformationController
         {
           NameTF.setText(temp.getName());
           AddressTF.setText(temp.getAddress());
-          PhoneNumberTF.setText(String.valueOf(temp.getPhoneNumber()));
+          PhoneNumberTF.setText(temp.getPhoneNumber());
           CheckInDP.setValue(temp.getCheckInDate());
           CheckOutDP.setValue(temp.getCheckOutDate());
           //RoomBox.setValue(temp.getRoomType());
-          IDProofTF.setText(String.valueOf(temp.getIdProof()));
+          IDProofTF.setText(temp.getIdProof());
         }
       }
     }
