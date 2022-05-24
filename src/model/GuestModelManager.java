@@ -3,6 +3,7 @@ package model;
 import utils.MyFileHandler;
 
 import java.io.*;
+import java.time.LocalDate;
 
 public class GuestModelManager
 {
@@ -64,9 +65,28 @@ public class GuestModelManager
       System.out.println("IO Error writing to file");
     }
   }
-  public  void changeGuestInformation()
+  public  void changeGuestInformation(String name, String address, String phoneNumber, String idProof,
+      LocalDate checkInDate, LocalDate checkOutDate, String roomType)
   {
+    GuestList allGuest = getAllGuest();
 
+    for (int i = 0; i < allGuest.size(); i++)
+    {
+      Guest guest = getAllGuest().get(i);
+
+      if (guest.getName().equals(name))
+      {
+        guest.setName(name);
+        guest.setAddress(address);
+        guest.setPhoneNumber(phoneNumber);
+        guest.setIdProof(idProof);
+        guest.setCheckInDate(checkInDate);
+        guest.setCheckOutDate(checkOutDate);
+        guest.setRoomType(roomType);
+      }
+    }
+
+    saveGuest(allGuest);
   }
 }
 

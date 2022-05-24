@@ -8,6 +8,7 @@ import model.GuestList;
 import model.GuestModelManager;
 import model.Rooms;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class GuestInformationController
@@ -78,13 +79,15 @@ public class GuestInformationController
     {
       String name = NameTF.getText();
       String address = AddressTF.getText();
-      long phoneNumber = Long.parseLong(PhoneNumberTF.getText());
-      String checkIn = CheckInDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
-      String checkOut = CheckOutDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
+      String phoneNumber = PhoneNumberTF.getText();
+      LocalDate checkIn = LocalDate.parse(
+          CheckInDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
+      LocalDate checkOut = LocalDate.parse(
+          CheckOutDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
       String roomType = String.valueOf(RoomBox.getSelectionModel().getSelectedItem());
       String idProof = IDProofTF.getText();
 
-      modelManager.changeGuestInformation();
+      modelManager.changeGuestInformation(name,address,phoneNumber,idProof,checkIn,checkOut,roomType);
       UpdateGuestBox();
     }
     else if (e.getSource() == ExitButton)
