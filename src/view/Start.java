@@ -12,7 +12,7 @@ public class Start extends Application
   {
     stage.setTitle("The Overlook Hotel");
     FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("view.Homepage.fxml"));
+    loader.setLocation(getClass().getResource("Homepage.fxml"));
     Scene scene = new Scene(loader.load());
     stage.setScene(scene);
     stage.show();

@@ -39,7 +39,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="DateOfBirthLB" layoutX="158.0" layoutY="249.0" prefHeight="25.0" prefWidth="150.0" text="Date Of Birth:">
+      <Label fx:id="RoomTypeLB" layoutX="158.0" layoutY="249.0" prefHeight="25.0" prefWidth="150.0" text="Room Type:">
          <font>
             <Font size="15.0" />
          </font>
@@ -73,8 +73,8 @@
       <Button fx:id="BackB" layoutX="14.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Back" />
       <Button fx:id="CheckoutB" layoutX="553.0" layoutY="431.0" mnemonicParsing="false" text="Check-Out" />
       <CheckBox fx:id="DiscountCEB" layoutX="411.0" layoutY="367.0" mnemonicParsing="false" text="Discount" />
-      <DatePicker fx:id="DateOfbirthDP" layoutX="332.0" layoutY="249.0" prefHeight="25.0" prefWidth="150.0" />
       <DatePicker fx:id="CheckinDP" layoutX="332.0" layoutY="291.0" prefHeight="25.0" prefWidth="150.0" />
       <DatePicker fx:id="CheckoutDP" layoutX="332.0" layoutY="329.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="RoomTypeTF" layoutX="334.0" layoutY="249.0" />
    </children>
 </AnchorPane>

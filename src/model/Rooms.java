@@ -8,8 +8,10 @@ public class Rooms
   private int SingleBed;
   private int doubleBed;
   private int tripleBed;
+  private String RoomType;
+  private int RoomNo;
 
-  public Rooms(int Single , int King , int Twin , int SingleBed , int doubleBed , int tripleBed)
+  public Rooms(int Single , int King , int Twin , int SingleBed , int doubleBed , int tripleBed , String RoomType , int RoomNo)
   {
     this.Single=Single;
     this.King = King;
@@ -17,6 +19,8 @@ public class Rooms
     this.SingleBed = SingleBed;
     this.doubleBed = doubleBed;
     this.tripleBed = tripleBed;
+    this.RoomType = RoomType;
+    this.RoomNo = RoomNo;
   }
 
   public int getSingle()
@@ -49,6 +53,16 @@ public class Rooms
     return tripleBed;
   }
 
+  public int getRoomNo()
+  {
+    return RoomNo;
+  }
+
+  public String getRoomType()
+  {
+    return RoomType;
+  }
+
   public void setSingle(int single)
   {
     Single = single;
@@ -79,7 +93,17 @@ public class Rooms
     this.tripleBed = tripleBed;
   }
 
-  public boolean equasl (Object obj)
+  public void setRoomNo(int roomNo)
+  {
+    RoomNo = roomNo;
+  }
+
+  public void setRoomType(String roomType)
+  {
+    RoomType = roomType;
+  }
+
+  public boolean equals (Object obj)
   {
     if (!(obj instanceof Rooms))
     {

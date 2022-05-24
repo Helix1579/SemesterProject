@@ -26,7 +26,7 @@ public class CheckOutController
   @FXML private TextField PriceTF;
   @FXML private TextField PhoneTF;
   @FXML private ComboBox<Guest> NameCB;
-  @FXML private DatePicker DateOfbirthDP;
+  @FXML private TextField RoomTypeTF;
   @FXML private DatePicker CheckinDP;
   @FXML private DatePicker CheckoutDP;
 
@@ -66,7 +66,7 @@ public class CheckOutController
         NameTF.setText(temp.getName());
         AddressTF.setText(temp.getAddress());
         PhoneTF.setText((temp.getPhoneNumber()));
-        DateOfbirthDP.setValue(temp.getDateOfBirth());
+        RoomTypeTF.setText(temp.getRoomType());
         CheckinDP.setValue(temp.getCheckInDate());
       }
     }
@@ -75,7 +75,20 @@ public class CheckOutController
       LocalDate checkIn = CheckinDP.getValue();
       LocalDate checkOut = CheckoutDP.getValue();
       int stay = Period.between(checkIn , checkOut).getDays();
+    //  int total = stay * ;
+      //PriceTF.setText(String.valueOf(total));
     }
+
+    else if(e.getSource() == CheckoutB)
+    {
+
+    }
+
+    else if(e.getSource() == ExitB)
+    {
+      System.exit(1);
+    }
+
   }
 
 }
