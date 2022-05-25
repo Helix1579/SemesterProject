@@ -74,9 +74,9 @@ public class ViewHandler
         check_inController = loader.getController();
         check_inController.init(this, modelManager, root);
       }
-      catch (Exception e)
+      catch (Exception ex)
       {
-        e.printStackTrace();
+        ex.printStackTrace();
       }
     }
     else
