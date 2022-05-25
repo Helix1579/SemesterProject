@@ -124,6 +124,9 @@
          <font>
             <Font size="15.0" />
          </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="Room" />
+         </toggleGroup>
       </RadioButton>
       <ComboBox fx:id="RoomBox" layoutX="320.0" layoutY="370.0" prefHeight="25.0" prefWidth="195.0" />
       <TextField fx:id="RoomNoTF" editable="false" layoutX="320.0" layoutY="400.0" prefHeight="25.0" prefWidth="195.0">

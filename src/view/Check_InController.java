@@ -2,6 +2,7 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import model.GuestModelManager;
 import model.Rooms;
 
@@ -13,6 +14,8 @@ public class Check_InController
 {
 
   private GuestModelManager modelManager;
+  private Region root;
+  private ViewHandler viewHandler;
 
   @FXML private TextField NameTF;
   @FXML private TextField AddressTF;
@@ -30,10 +33,14 @@ public class Check_InController
   @FXML private Button BackButton;
   @FXML private Button ExitButton;
 
-  public void init(GuestModelManager guestModelManager)
+
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
-    this.modelManager = guestModelManager;
+    this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
   }
+
   public void handleAction(ActionEvent e)
   {
     if (e.getSource() == CheckInButton)
@@ -67,5 +74,15 @@ public class Check_InController
     int index = RoomBox.getSelectionModel().getSelectedIndex();
 
     RoomBox.getItems().clear();
+  }
+
+  public void reset()
+  {
+
+  }
+
+  public Region getRoot()
+  {
+    return root;
   }
 }

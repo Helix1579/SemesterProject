@@ -61,7 +61,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="GuestBox" layoutX="256.0" layoutY="107.0" prefHeight="25.0" prefWidth="210.0" />
+      <ChoiceBox layoutX="256.0" layoutY="107.0" prefHeight="25.0" prefWidth="210.0" />
       <Label fx:id="PhoneNumberLabel1" layoutX="155.0" layoutY="250.0" prefHeight="31.0" prefWidth="150.0" text="Check-in Date :">
          <font>
             <Font size="15.0" />

@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestList;
 import model.GuestModelManager;
@@ -16,6 +17,9 @@ import java.time.Period;
 public class CheckOutController
 {
   private GuestModelManager modelManager;
+  private Region root;
+  private ViewHandler viewHandler;
+
   @FXML private Button ExitB;
   @FXML private TextField NameTF;
   @FXML private Button SearchB;
@@ -30,9 +34,11 @@ public class CheckOutController
   @FXML private DatePicker CheckinDP;
   @FXML private DatePicker CheckoutDP;
 
-  public void init(GuestModelManager modelManager)
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
   }
 
   public void UpdateGuestBox()
@@ -91,4 +97,13 @@ public class CheckOutController
 
   }
 
+  public void reset()
+  {
+
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
 }

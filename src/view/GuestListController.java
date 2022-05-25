@@ -3,20 +3,25 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import model.GuestList;
 import model.GuestModelManager;
 
 public class GuestListController
 {
+  private ViewHandler viewHandler;
+  private Region root;
   private GuestModelManager modelManager;
 
   @FXML private Button getAllGuest;
   @FXML private Button exitButton;
   @FXML private TextArea allGuestArea;
 
-  public void init(GuestModelManager modelManager)
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
     reload();
   }
 
@@ -43,5 +48,14 @@ public class GuestListController
     {
       System.exit(1);
     }
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
+
+  public void reset()
+  {
   }
 }

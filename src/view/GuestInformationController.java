@@ -3,6 +3,7 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestList;
 import model.GuestModelManager;
@@ -14,6 +15,8 @@ import java.time.format.DateTimeFormatter;
 public class GuestInformationController
 {
   private GuestModelManager modelManager;
+  private ViewHandler viewHandler;
+  private Region root;
 
   @FXML private TextField NameTF;
   @FXML private TextField AddressTF;
@@ -28,9 +31,11 @@ public class GuestInformationController
   @FXML private ComboBox<Guest> GuestBox;
   @FXML private ComboBox<Rooms> RoomBox;
 
-  public void init(GuestModelManager modelManager)
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
   }
 
   public void UpdateGuestBox()
@@ -94,5 +99,14 @@ public class GuestInformationController
     {
       System.exit(1);
     }
+  }
+
+  public void reset()
+  {
+  }
+
+  public Region getRoot()
+  {
+    return root;
   }
 }
