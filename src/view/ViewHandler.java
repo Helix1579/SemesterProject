@@ -12,6 +12,7 @@ public class ViewHandler
 {
   private Scene scene;
   private Stage window;
+  private HomepageController homepageController;
   private GuestListController guestListController;
   private GuestInformationController guestInformationController;
   private Check_InController check_inController;
@@ -27,7 +28,7 @@ public class ViewHandler
   public void start(Stage window)
   {
     this.window = window;
-    openPage("Homepage");
+    openPage("Homepage.fxml");
   }
 
   public void openPage(String id)
@@ -47,6 +48,8 @@ public class ViewHandler
       case "GuestList":
         root = loadGuestList();
         break;
+      case "Homepage":
+        root = loadHomepage();
     }
     scene.setRoot(root);
     String title = "";
@@ -156,5 +159,29 @@ public class ViewHandler
       guestListController.reset();
     }
     return guestListController.getRoot();
+  }
+
+  public Region loadHomepage()
+  {
+    if(check_inController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Homepage.fxml"));
+        Region root = loader.load();
+        homepageController = loader.getController();
+        homepageController.init(this, modelManager, root);
+      }
+      catch (Exception ex)
+      {
+        ex.printStackTrace();
+      }
+    }
+    else
+    {
+      homepageController.reset();
+    }
+    return homepageController.getRoot();
   }
 }
