@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CancelController">
+<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GuestListController">
    <children>
       <Button fx:id="CancelB" layoutX="532.0" layoutY="425.0" mnemonicParsing="false" text="Cancel Booking" />
       <Button fx:id="BackB" layoutX="20.0" layoutY="425.0" mnemonicParsing="false" text="Back" />
       <TextField fx:id="NameTF" layoutX="325.0" layoutY="155.0" />
       <TextField fx:id="PhoneTF" layoutX="325.0" layoutY="203.0" />
-      <TextField layoutX="325.0" layoutY="251.0" />
+      <TextField fx:id="RoomTF" layoutX="325.0" layoutY="251.0" />
       <DatePicker fx:id="CheckInDP" layoutX="326.0" layoutY="297.0" prefHeight="21.0" prefWidth="149.0" />
       <DatePicker fx:id="CheckOutDP" layoutX="325.0" layoutY="339.0" prefHeight="11.0" prefWidth="149.0" />
       <Label fx:id="NameLB" layoutX="169.0" layoutY="157.0" text="Name:">
@@ -55,7 +55,7 @@
             <Button fx:id="ExitB" layoutX="516.0" layoutY="33.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" text="Exit" />
          </children>
       </Pane>
-      <Button fx:id="SearchCB" layoutX="448.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <Button fx:id="SearchB" layoutX="448.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
       <ComboBox fx:id="NameCB" layoutX="170.0" layoutY="100.0" prefHeight="25.0" prefWidth="266.0" promptText="Names Of Customer" />
    </children>
 </AnchorPane>
