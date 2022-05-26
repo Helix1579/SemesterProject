@@ -15,7 +15,7 @@ public class ViewHandler
   private HomepageController homepageController;
   private GuestListController guestListController;
   private GuestInformationController guestInformationController;
-  private Check_InController check_inController;
+  //private Check_InController check_inController;
   private CheckOutController checkOutController;
 
   private GuestModelManager modelManager;
@@ -37,7 +37,7 @@ public class ViewHandler
     switch (id)
     {
       case "CheckIn":
-        root = loadCheckInPage();
+        //root = loadCheckInPage();
         break;
       case "CheckOut":
         root = loadCheckOutPage();
@@ -64,7 +64,7 @@ public class ViewHandler
     window.setHeight(root.getPrefHeight());
     window.show();
   }
-
+/*
   public Region loadCheckInPage()
   {
     if(check_inController == null)
@@ -88,7 +88,7 @@ public class ViewHandler
     }
     return check_inController.getRoot();
   }
-
+*/
   public Region loadCheckOutPage()
   {
     if(checkOutController == null)
@@ -163,7 +163,7 @@ public class ViewHandler
 
   public Region loadHomepage()
   {
-    if(check_inController == null)
+    //if(check_inController == null)
     {
       try
       {
@@ -178,7 +178,7 @@ public class ViewHandler
         ex.printStackTrace();
       }
     }
-    else
+    //else
     {
       homepageController.reset();
     }

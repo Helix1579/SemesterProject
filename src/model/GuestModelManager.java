@@ -66,7 +66,8 @@ public class GuestModelManager
     }
   }
   public  void changeGuestInformation(String name, String address, String phoneNumber, String idProof,
-      LocalDate checkInDate, LocalDate checkOutDate, String roomType)
+      LocalDate checkInDate, LocalDate
+      checkOutDate, String roomType)
   {
     GuestList allGuest = getAllGuest();
 
