@@ -15,7 +15,13 @@ public class GuestListController
 
   @FXML private Button getAllGuest;
   @FXML private Button exitButton;
-  @FXML private TextArea allGuestArea;
+  @FXML private TableView<GuestList> allGuestTable;
+  private TableView.TableViewSelectionModel selectionModel;
+  private TableColumn<GuestList,String> nameCol;
+  private TableColumn<GuestList,String> roomNumCol;
+  private TableColumn<GuestList,String> CheckOutCol;
+  private TableColumn<GuestList,String> phNumCol;
+  private TableColumn<GuestList,String> CheckInCol;
 
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
@@ -32,22 +38,20 @@ public class GuestListController
       update();
     }
   }
+
   public void update()
   {
-    GuestList guests= modelManager.getAllGuest();
-    allGuestArea.setText(guests.toString());
-    allGuestArea.setEditable(false);
+
   }
+
   public void handleAction(ActionEvent e)
   {
-    if(e.getSource() == getAllGuest)
-    {
-      update();
-    }
-    else if (e.getSource() == exitButton)
+    if (e.getSource() == exitButton)
     {
       System.exit(1);
     }
+
+
   }
 
   public Region getRoot()
