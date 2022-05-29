@@ -29,7 +29,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="AddressLabel" layoutX="155.0" layoutY="190.0" prefHeight="31.0" prefWidth="150.0" text="Address :">
+      <Label fx:id="AddressLabel" layoutX="155.0" layoutY="190.0" prefHeight="31.0" prefWidth="150.0" text="E-Mail :">
          <font>
             <Font size="15.0" />
          </font></Label>
@@ -43,7 +43,7 @@
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <TextField fx:id="AddressTF" layoutX="305.0" layoutY="190.0" onAction="#handleAction" prefHeight="25.0" prefWidth="200.0">
+      <TextField fx:id="EmailTF" layoutX="305.0" layoutY="190.0" onAction="#handleAction" prefHeight="25.0" prefWidth="200.0">
          <font>
             <Font size="15.0" />
          </font></TextField>

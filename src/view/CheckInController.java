@@ -2,15 +2,11 @@ package view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
+import model.Guest;
 import model.GuestModelManager;
 
-import java.io.IOException;
+import java.time.LocalDate;
 
 public class CheckInController
 {
@@ -27,31 +23,33 @@ public class CheckInController
   public RadioButton TripleBed;
   @FXML
   public ToggleGroup roomType;
-
+  @FXML private Button CheckInButton;
   @FXML
-  private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF;
+  private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF,roomNumberTF;
 
   @FXML private DatePicker dateOfBirthDP, CheckInDateDP, CheckOutDateDP;
 
   @FXML private Label welcomeText;
 
-  public String getRoomCapacityValue()
-  {
-    String roomCapacity = null;
-    if (single.isSelected())
-    {
-      roomCapacity = "Single Bed";
-    }
-    else if (doublebed.isSelected())
-    {
-      roomCapacity = "Double";
-    }
-    else if (triplebed.isSelected())
-    {
-      roomCapacity = "Three Beds";
-    }
-    return roomCapacity;
-  }
+
+   public void handleAction(ActionEvent e)
+   {
+     if (e.getSource() == CheckInButton)
+     {
+       String name = nameTF.getText();
+       String phone = phoneTF.getText();
+       String email = emailTF.getText();
+       String nationality = nationalityTF.getText();
+       String id = idTF.getText();
+       String roomNumber = roomNumberTF.getText();
+       LocalDate dateOfBirth = dateOfBirthDP.getValue();
+       LocalDate CheckInDate = CheckInDateDP.getValue();
+       LocalDate CheckOutDate = CheckOutDateDP.getValue();
+       String roomType = getRoomTypeValue();
+
+       modelManager.addGuest(new Guest(name,email, dateOfBirth,roomNumber,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
+     }
+   }
 
 
   public String getRoomTypeValue()
@@ -65,7 +63,18 @@ public class CheckInController
     {
       roomType = "Twin";
     }
-
+    if (SingleBed.isSelected())
+    {
+      roomType = "Single Bed";
+    }
+    else if (DoubleBed.isSelected())
+    {
+      roomType = "Double Bed";
+    }
+    else if (TripleBed.isSelected())
+    {
+      roomType = "Three Bed";
+    }
     return roomType;
   }
 

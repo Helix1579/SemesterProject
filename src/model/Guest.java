@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Guest implements Serializable
 {
   private String name;
+  private String email;
   private LocalDate dateOfBirth;
   private String phoneNumber;
   private String nationality;
@@ -17,11 +18,11 @@ public class Guest implements Serializable
   private String roomType;
   private String roomNumber;
 
-  public Guest(String name,  LocalDate dateOfBirth, String phoneNumber, String nationality, String idProof,
-      LocalDate checkInDate, LocalDate checkOutDate, String roomType) //add room num
+  public Guest(String name, String email, LocalDate dateOfBirth, String phoneNumber, String nationality, String idProof,
+      LocalDate checkInDate, LocalDate checkOutDate,String roomType, String roomNumber) //add room num
   {
     this.name = name;
-
+    this.email = email;
     this.dateOfBirth = dateOfBirth;
     this.phoneNumber = phoneNumber;
     this.nationality = nationality;
@@ -37,7 +38,15 @@ public class Guest implements Serializable
     return name;
   }
 
+  public String getEmail()
+  {
+    return email;
+  }
 
+  public void setEmail(String email)
+  {
+    this.email = email;
+  }
 
   public LocalDate getDateOfBirth()
   {

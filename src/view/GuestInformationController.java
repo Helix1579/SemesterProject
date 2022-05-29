@@ -19,7 +19,7 @@ public class GuestInformationController
   private Region root;
 
   @FXML private TextField NameTF;
-  @FXML private TextField AddressTF;
+  @FXML private TextField EmailTF;
   @FXML private TextField PhoneNumberTF;
   @FXML private DatePicker CheckInDP;
   @FXML private DatePicker CheckOutDP;
@@ -83,7 +83,7 @@ public class GuestInformationController
     else if (e.getSource() == UpdateButton)
     {
       String name = NameTF.getText();
-      String address = AddressTF.getText();
+      String address = EmailTF.getText();
       String phoneNumber = PhoneNumberTF.getText();
       LocalDate checkIn = LocalDate.parse(
           CheckInDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));

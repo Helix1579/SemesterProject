@@ -24,7 +24,7 @@ public class InitialData
         String temp = guestArray[i];
         String[] tempArray = temp.split(" , ");
         String name = tempArray[0];
-        String address = tempArray[1];
+        String email = tempArray[1];
         LocalDate dateOfBirth = LocalDate.parse(tempArray[2]);
         String phoneNumber = tempArray[3];
         String nationality = tempArray[4];
@@ -34,7 +34,7 @@ public class InitialData
         String roomType = tempArray[8];
         String roomNumber = tempArray[9];
 
-        guests.add(new Guest(name, dateOfBirth, phoneNumber, nationality, idProof, checkInDate, checkOutDate, roomType));
+        guests.add(new Guest(name,email, dateOfBirth, phoneNumber, nationality, idProof, checkInDate, checkOutDate,roomType,roomNumber));
       }
     }
     catch (FileNotFoundException e)
