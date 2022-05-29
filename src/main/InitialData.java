@@ -34,7 +34,7 @@ public class InitialData
         String roomType = tempArray[8];
         String roomNumber = tempArray[9];
 
-        guests.add(new Guest(name, address, dateOfBirth, phoneNumber, nationality, idProof, checkInDate, checkOutDate, roomType, roomNumber));
+        guests.add(new Guest(name, dateOfBirth, phoneNumber, nationality, idProof, checkInDate, checkOutDate, roomType));
       }
     }
     catch (FileNotFoundException e)

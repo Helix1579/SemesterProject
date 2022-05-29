@@ -70,7 +70,7 @@ public class GuestInformationController
         if(temp != null)
         {
           NameTF.setText(temp.getName());
-          AddressTF.setText(temp.getAddress());
+
           PhoneNumberTF.setText(temp.getPhoneNumber());
           CheckInDP.setValue(temp.getCheckInDate());
           CheckOutDP.setValue(temp.getCheckOutDate());
@@ -92,7 +92,7 @@ public class GuestInformationController
       String roomType = String.valueOf(RoomBox.getSelectionModel().getSelectedItem());
       String idProof = IDProofTF.getText();
 
-      modelManager.changeGuestInformation(name,address,phoneNumber,idProof,checkIn,checkOut,roomType);
+      modelManager.changeGuestInformation(name,phoneNumber,idProof,checkIn,checkOut,roomType);
       UpdateGuestBox();
     }
     else if (e.getSource() == ExitButton)

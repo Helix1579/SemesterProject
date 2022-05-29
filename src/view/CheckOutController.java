@@ -70,7 +70,6 @@ public class CheckOutController
       if(temp != null)
       {
         NameTF.setText(temp.getName());
-        AddressTF.setText(temp.getAddress());
         PhoneTF.setText((temp.getPhoneNumber()));
         RoomTypeTF.setText(temp.getRoomType());
         CheckinDP.setValue(temp.getCheckInDate());

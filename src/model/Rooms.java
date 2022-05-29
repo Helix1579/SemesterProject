@@ -2,7 +2,7 @@ package model;
 
 public class Rooms
 {
-  private int Single;
+
   private int King;
   private int Twin;
   private int SingleBed;
@@ -11,9 +11,9 @@ public class Rooms
   private String RoomType;
   private int RoomNo;
 
-  public Rooms(int Single , int King , int Twin , int SingleBed , int doubleBed , int tripleBed , String RoomType , int RoomNo)
+  public Rooms( int King , int Twin , int SingleBed , int doubleBed , int tripleBed , String RoomType , int RoomNo)
   {
-    this.Single=Single;
+
     this.King = King;
     this.Twin = Twin;
     this.SingleBed = SingleBed;
@@ -23,10 +23,6 @@ public class Rooms
     this.RoomNo = RoomNo;
   }
 
-  public int getSingle()
-  {
-    return Single;
-  }
 
   public int getKing()
   {
@@ -63,10 +59,7 @@ public class Rooms
     return RoomType;
   }
 
-  public void setSingle(int single)
-  {
-    Single = single;
-  }
+
 
   public void setKing(int king)
   {
@@ -112,11 +105,19 @@ public class Rooms
 
     Rooms other = (Rooms) obj;
 
-    return other.Single == Single && other.King == King && other.Twin == Twin && other.SingleBed ==SingleBed && other.doubleBed == doubleBed && other.tripleBed == tripleBed;
+    return  other.King == King && other.Twin == Twin && other.SingleBed ==SingleBed && other.doubleBed == doubleBed && other.tripleBed == tripleBed;
   }
 
   public String toString()
   {
-    return Single + King + Twin + SingleBed + doubleBed + tripleBed + " ";
+    return   King + Twin + SingleBed + doubleBed + tripleBed + " ";
+  }
+
+
+  {
+  }
+
+  public void add(Rooms rooms)
+  {
   }
 }

@@ -8,7 +8,6 @@ import java.time.LocalDate;
 public class Guest implements Serializable
 {
   private String name;
-  private String address;
   private LocalDate dateOfBirth;
   private String phoneNumber;
   private String nationality;
@@ -18,11 +17,11 @@ public class Guest implements Serializable
   private String roomType;
   private String roomNumber;
 
-  public Guest(String name, String address, LocalDate dateOfBirth, String phoneNumber, String nationality, String idProof,
-      LocalDate checkInDate, LocalDate checkOutDate, String roomType, String roomNumber)
+  public Guest(String name,  LocalDate dateOfBirth, String phoneNumber, String nationality, String idProof,
+      LocalDate checkInDate, LocalDate checkOutDate, String roomType) //add room num
   {
     this.name = name;
-    this.address = address;
+
     this.dateOfBirth = dateOfBirth;
     this.phoneNumber = phoneNumber;
     this.nationality = nationality;
@@ -38,10 +37,7 @@ public class Guest implements Serializable
     return name;
   }
 
-  public String getAddress()
-  {
-    return address;
-  }
+
 
   public LocalDate getDateOfBirth()
   {
@@ -88,10 +84,7 @@ public class Guest implements Serializable
     this.name = name;
   }
 
-  public void setAddress(String address)
-  {
-    this.address = address;
-  }
+
 
   public void setDateOfBirth(LocalDate dateOfBirth)
   {
@@ -135,7 +128,7 @@ public class Guest implements Serializable
 
   public String toString()
   {
-    return name + " , " + address + " , " + dateOfBirth + " , " + phoneNumber + " , " + nationality +
+    return name + " , " +  " , " + dateOfBirth + " , " + phoneNumber + " , " + nationality +
         " , " + idProof + " , " + checkInDate + " , " + checkOutDate + " , " + roomType + " , " + roomNumber;
   }
 
@@ -148,7 +141,7 @@ public class Guest implements Serializable
 
     Guest other = (Guest) obj;
 
-    return name.equals(other.name) && address.equals(other.address) && dateOfBirth.equals(other.dateOfBirth) &&
+    return name.equals(other.name)  && dateOfBirth.equals(other.dateOfBirth) &&
         phoneNumber == other.phoneNumber && nationality.equals(other.nationality) && idProof == other.idProof &&
         checkInDate.equals(other.checkInDate) && checkOutDate.equals(other.checkOutDate) &&
         roomType.equals(other.roomType) && roomNumber == other.roomNumber;
