@@ -15,7 +15,7 @@ public class ViewHandler
   private HomepageController homepageController;
   private GuestListController guestListController;
   private GuestInformationController guestInformationController;
-  //private Check_InController check_inController;
+  private CheckInController check_inController;
   private CheckOutController checkOutController;
 
   private GuestModelManager modelManager;
