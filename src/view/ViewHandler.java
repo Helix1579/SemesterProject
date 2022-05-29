@@ -25,46 +25,44 @@ public class ViewHandler
     this.modelManager = modelManager;
     scene = new Scene(new Region());
   }
+
   public void start(Stage window)
   {
     this.window = window;
-    openPage("Homepage.fxml");
+    openView("MainView");
   }
 
-  public void openPage(String id)
+  public void openView(String id)
   {
     Region root = null;
     switch (id)
     {
       case "CheckIn":
-        //root = loadCheckInPage();
+        root = loadCheckInPage();
         break;
       case "CheckOut":
         root = loadCheckOutPage();
         break;
-      case "GuestInformation":
-        root = loadGuestInfoPage();
-        break;
-      case "GuestList":
-        root = loadGuestList();
-        break;
       case "Homepage":
         root = loadHomepage();
+        break;
     }
     scene.setRoot(root);
     String title = "";
 
-    if(root.getUserData() != null)
+    if(root.getUserData() !=null)
     {
-      title+= root.getUserData();
+      title += root.getUserData();
     }
+
     window.setTitle(title);
     window.setScene(scene);
     window.setWidth(root.getPrefWidth());
     window.setHeight(root.getPrefHeight());
     window.show();
   }
-/*
+  }
+
   public Region loadCheckInPage()
   {
     if(check_inController == null)
@@ -88,7 +86,7 @@ public class ViewHandler
     }
     return check_inController.getRoot();
   }
-*/
+
   public Region loadCheckOutPage()
   {
     if(checkOutController == null)
