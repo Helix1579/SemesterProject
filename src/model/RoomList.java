@@ -23,5 +23,6 @@ public Rooms getRooms(int index){
 public Rooms[] getAllRooms(){
     return rooms.toArray(new Rooms[getNumberOfRooms()]);
 
+
 }
 }

@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.GuestModelManager;
 
@@ -19,28 +16,24 @@ public class CheckInController
 {
   private GuestModelManager modelManager;
   @FXML
-  public RadioButton single;
+  public RadioButton King;
   @FXML
-  public RadioButton doublebed;
+  public RadioButton Twin;
   @FXML
-  public RadioButton triplebed;
+  public RadioButton SingleBed;
   @FXML
-  public RadioButton normal;
+  public RadioButton DoubleBed;
   @FXML
-  public RadioButton suit;
+  public RadioButton TripleBed;
   @FXML
   public ToggleGroup roomType;
+
   @FXML
-  public ToggleGroup roomCapacity;
-  @FXML
-  private TextField nameTextField, phoneTextField;
+  private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF;
+
+  @FXML private DatePicker dateOfBirthDP, CheckInDateDP, CheckOutDateDP;
 
   @FXML private Label welcomeText;
-
-  @FXML protected void onHelloButtonClick()
-  {
-    welcomeText.setText("Welcome to JavaFX Application!");
-  }
 
   public String getRoomCapacityValue()
   {
@@ -64,13 +57,13 @@ public class CheckInController
   public String getRoomTypeValue()
   {
     String roomType = null;
-    if (normal.isSelected())
+    if (King.isSelected())
     {
-      roomType = "Normal";
+      roomType = "King";
     }
-    else if (suit.isSelected())
+    else if (Twin.isSelected())
     {
-      roomType = "Suit";
+      roomType = "Twin";
     }
 
     return roomType;

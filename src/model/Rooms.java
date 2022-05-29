@@ -6,19 +6,19 @@ public class Rooms
   private int King;
   private int Twin;
   private int SingleBed;
-  private int doubleBed;
-  private int tripleBed;
+  private int DoubleBed;
+  private int TripleBed;
   private String RoomType;
   private int RoomNo;
 
-  public Rooms( int King , int Twin , int SingleBed , int doubleBed , int tripleBed , String RoomType , int RoomNo)
+  public Rooms( int King , int Twin , int SingleBed , int DoubleBed , int TripleBed , String RoomType , int RoomNo)
   {
 
     this.King = King;
     this.Twin = Twin;
     this.SingleBed = SingleBed;
-    this.doubleBed = doubleBed;
-    this.tripleBed = tripleBed;
+    this.DoubleBed = DoubleBed;
+    this.TripleBed = TripleBed;
     this.RoomType = RoomType;
     this.RoomNo = RoomNo;
   }
@@ -41,12 +41,12 @@ public class Rooms
 
   public int getDoubleBed()
   {
-    return doubleBed;
+    return DoubleBed;
   }
 
   public int getTripleBed()
   {
-    return tripleBed;
+    return TripleBed;
   }
 
   public int getRoomNo()
@@ -78,12 +78,12 @@ public class Rooms
 
   public void setDoubleBed(int doubleBed)
   {
-    this.doubleBed = doubleBed;
+    this.DoubleBed = doubleBed;
   }
 
   public void setTripleBed(int tripleBed)
   {
-    this.tripleBed = tripleBed;
+    this.TripleBed = tripleBed;
   }
 
   public void setRoomNo(int roomNo)
@@ -105,12 +105,12 @@ public class Rooms
 
     Rooms other = (Rooms) obj;
 
-    return  other.King == King && other.Twin == Twin && other.SingleBed ==SingleBed && other.doubleBed == doubleBed && other.tripleBed == tripleBed;
+    return  other.King == King && other.Twin == Twin && other.SingleBed ==SingleBed && other.DoubleBed == DoubleBed && other.TripleBed == TripleBed;
   }
 
   public String toString()
   {
-    return   King + Twin + SingleBed + doubleBed + tripleBed + " ";
+    return   King + Twin + SingleBed + DoubleBed + TripleBed + " ";
   }
 
 
