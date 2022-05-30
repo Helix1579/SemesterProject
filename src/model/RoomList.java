@@ -12,15 +12,15 @@ public class RoomList
     rooms = new ArrayList<Rooms>();
   }
   public void addRooms(Rooms rooms){
-    rooms.add(rooms);
+    this.rooms.add(rooms);
   }
   public int getNumberOfRooms(){
     return  rooms.size();
   }
-public Rooms getRooms(int index){
+  public Rooms getRooms(int index){
     return rooms.get(index);
 }
-public Rooms[] getAllRooms(){
+  public Rooms[] getAllRooms(){
     return rooms.toArray(new Rooms[getNumberOfRooms()]);
 
 

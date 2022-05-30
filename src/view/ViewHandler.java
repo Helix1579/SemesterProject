@@ -71,8 +71,8 @@ public class ViewHandler
 
     window.setTitle(title);
     window.setScene(scene);
-    window.setWidth(root.getPrefWidth());
-    window.setHeight(root.getPrefHeight());
+    window.setWidth(640);
+    window.setHeight(470);
     window.show();
   }
 

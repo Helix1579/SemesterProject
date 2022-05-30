@@ -115,8 +115,4 @@ public class Rooms
 
   {
   }
-
-  public void add(Rooms rooms)
-  {
-  }
 }
