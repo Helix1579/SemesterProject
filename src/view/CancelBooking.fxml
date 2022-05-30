@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GuestListController">
+<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CancelController">
    <children>
       <Button fx:id="CancelB" layoutX="532.0" layoutY="425.0" mnemonicParsing="false" text="Cancel Booking" />
       <Button fx:id="BackB" layoutX="20.0" layoutY="425.0" mnemonicParsing="false" text="Back" />
@@ -55,7 +55,7 @@
             <Button fx:id="ExitB" layoutX="516.0" layoutY="33.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="110.0" text="Exit" />
          </children>
       </Pane>
-      <Button fx:id="SearchB" layoutX="448.0" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="24.0" text="Button" />
-      <ComboBox fx:id="NameCB" layoutX="170.0" layoutY="100.0" prefHeight="25.0" prefWidth="266.0" promptText="Names Of Customer" />
+      <Button fx:id="SearchB" layoutX="448.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchHandle" prefHeight="25.0" prefWidth="24.0" text="Button" />
+      <ComboBox fx:id="GuestCB" layoutX="170.0" layoutY="100.0" prefHeight="25.0" prefWidth="266.0" promptText="Names Of Customer" />
    </children>
 </AnchorPane>

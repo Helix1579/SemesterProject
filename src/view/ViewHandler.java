@@ -29,7 +29,7 @@ public class ViewHandler
   public void start(Stage window)
   {
     this.window = window;
-    openView("MainView");
+    openView("Homepage");
   }
 
   public void openView(String id)
@@ -60,7 +60,6 @@ public class ViewHandler
     window.setWidth(root.getPrefWidth());
     window.setHeight(root.getPrefHeight());
     window.show();
-  }
   }
 
   public Region loadCheckInPage()
@@ -161,14 +160,16 @@ public class ViewHandler
 
   public Region loadHomepage()
   {
-    //if(check_inController == null)
+    if(homepageController == null)
     {
+      System.out.println("1");
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Homepage.fxml"));
         Region root = loader.load();
         homepageController = loader.getController();
+        System.out.println(homepageController);
         homepageController.init(this, modelManager, root);
       }
       catch (Exception ex)
@@ -176,7 +177,7 @@ public class ViewHandler
         ex.printStackTrace();
       }
     }
-    //else
+    else
     {
       homepageController.reset();
     }

@@ -96,6 +96,11 @@ public class Rooms
     RoomType = roomType;
   }
 
+  public void roomPrice()
+  {
+    setKing(150);
+  }
+
   public boolean equals (Object obj)
   {
     if (!(obj instanceof Rooms))
@@ -111,13 +116,5 @@ public class Rooms
   public String toString()
   {
     return   King + Twin + SingleBed + DoubleBed + TripleBed + " ";
-  }
-
-
-  {
-  }
-
-  public void add(Rooms rooms)
-  {
   }
 }

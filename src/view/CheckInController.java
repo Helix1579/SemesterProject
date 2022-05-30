@@ -3,6 +3,7 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestModelManager;
 
@@ -11,6 +12,9 @@ import java.time.LocalDate;
 public class CheckInController
 {
   private GuestModelManager modelManager;
+  private Region root;
+  private ViewHandler viewHandler;
+
   @FXML
   public RadioButton King;
   @FXML
@@ -31,30 +35,48 @@ public class CheckInController
 
   @FXML private Label welcomeText;
 
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
+  {
+    this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
+  }
+  public void reset()
+  {
 
-   public void handleAction(ActionEvent e)
-   {
-     if (e.getSource() == CheckInButton)
-     {
-       String name = nameTF.getText();
-       String phone = phoneTF.getText();
-       String email = emailTF.getText();
-       String nationality = nationalityTF.getText();
-       String id = idTF.getText();
-       String roomNumber = roomNumberTF.getText();
-       LocalDate dateOfBirth = dateOfBirthDP.getValue();
-       LocalDate CheckInDate = CheckInDateDP.getValue();
-       LocalDate CheckOutDate = CheckOutDateDP.getValue();
-       String roomType = getRoomTypeValue();
+  }
 
-       modelManager.addGuest(new Guest(name,email, dateOfBirth,phone,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
-     }
-   }
+  public Region getRoot()
+  {
+    return root;
+  }
 
+  public void handleAction(ActionEvent e)
+  {
+    if (e.getSource() == CheckInButton)
+    {
+      String name = nameTF.getText();
+      String phone = phoneTF.getText();
+      String email = emailTF.getText();
+      String nationality = nationalityTF.getText();
+      String id = idTF.getText();
+      String roomNumber = roomNumberTF.getText();
+      LocalDate dateOfBirth = dateOfBirthDP.getValue();
+      LocalDate CheckInDate = CheckInDateDP.getValue();
+      LocalDate CheckOutDate = CheckOutDateDP.getValue();
+      String roomType = getRoomTypeValue();
+
+      modelManager.addGuest(
+          new Guest(name, email, dateOfBirth, phone, nationality, id,
+              CheckInDate, CheckOutDate, roomType, roomNumber));
+
+      System.out.println(":Checked-In");
+    }
+  }
 
   public String getRoomTypeValue()
   {
-    String roomType = null;
+    String roomType;
     if (King.isSelected())
     {
       roomType = "King";
@@ -63,7 +85,7 @@ public class CheckInController
     {
       roomType = "Twin";
     }
-    if (SingleBed.isSelected())
+    else if (SingleBed.isSelected())
     {
       roomType = "Single Bed";
     }
@@ -75,7 +97,10 @@ public class CheckInController
     {
       roomType = "Three Bed";
     }
+    else
+    {
+      roomType = "";
+    }
     return roomType;
   }
-
 }
