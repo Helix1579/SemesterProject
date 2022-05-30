@@ -99,6 +99,10 @@ public class GuestInformationController
     {
       System.exit(1);
     }
+    if (e.getSource() == BackButton)
+    {
+      viewHandler.openView("Homepage");
+    }
   }
 
   public void reset()

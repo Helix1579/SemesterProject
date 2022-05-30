@@ -15,23 +15,16 @@ public class CheckInController
   private ViewHandler viewHandler;
 
   private GuestModelManager modelManager;
-  @FXML
-  public RadioButton King;
-  @FXML
-  public RadioButton Twin;
-  @FXML
-  public RadioButton SingleBed;
-  @FXML
-  public RadioButton DoubleBed;
-  @FXML
-  public RadioButton TripleBed;
-  @FXML
-  public ToggleGroup roomType;
+  @FXML public RadioButton King;
+  @FXML public RadioButton Twin;
+  @FXML public RadioButton SingleBed;
+  @FXML public RadioButton DoubleBed;
+  @FXML public RadioButton TripleBed;
+  @FXML public ToggleGroup roomType;
   @FXML private Button CheckInButton;
-  @FXML
-  private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF,roomNumberTF;
-
+  @FXML private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF,roomNumberTF;
   @FXML private DatePicker dateOfBirthDP, CheckInDateDP, CheckOutDateDP;
+  @FXML private Button backButton;
 
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
@@ -55,6 +48,10 @@ public class CheckInController
        String roomType = getRoomTypeValue();
 
        modelManager.addGuest(new Guest(name,email, dateOfBirth,phone,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
+     }
+     if (e.getSource() == backButton)
+     {
+       viewHandler.openView("Homepage");
      }
    }
 

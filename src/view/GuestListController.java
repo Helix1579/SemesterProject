@@ -27,6 +27,7 @@ public class GuestListController extends Tab
   @FXML private TableColumn<Guest,LocalDate> CheckOutCol;
   @FXML private TableColumn<Guest,String> phNumCol;
   @FXML private TableColumn<Guest,LocalDate> CheckInCol;
+  @FXML private Button backButton;
   private MyActionListener listener;
 
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
@@ -82,6 +83,10 @@ public class GuestListController extends Tab
     if (e.getSource() == exitButton)
     {
       System.exit(1);
+    }
+    if (e.getSource() == backButton)
+    {
+      viewHandler.openView("Homepage");
     }
   }
 
