@@ -9,6 +9,11 @@ import model.GuestModelManager;
 
 import java.time.LocalDate;
 
+/**
+ *  Class containing all the action events happening at checkin page
+ * @author Ivan
+ * @version 2.0
+ */
 public class CheckInController
 {
   private Region root;
@@ -26,12 +31,23 @@ public class CheckInController
   @FXML private DatePicker dateOfBirthDP, CheckInDateDP, CheckOutDateDP;
   @FXML private Button backButton;
 
+  /**
+   * Requires to switch between different pages
+   * @param viewHandler the viewHandler to replace with
+   * @param modelManager the modelmanager to replace with
+   * @param root the root to replace with
+   */
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
   }
+
+  /**
+   * this method contains all the action events happening on the page
+   * @param e Creates and returns a copy of this event with the specified event source and target the object on which the Event initially occurred
+   */
    public void handleAction(ActionEvent e)
    {
      if (e.getSource() == CheckInButton)
@@ -55,7 +71,10 @@ public class CheckInController
      }
    }
 
-
+  /**
+   *
+   * @return the type of room selected.
+    */
   public String getRoomTypeValue()
   {
     String roomType = null;

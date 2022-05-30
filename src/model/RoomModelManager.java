@@ -5,17 +5,29 @@ import utils.MyFileHandler;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * A class containing the methods of room objects
+ * @author Ivan
+ * @version 2.0
+ */
 public class RoomModelManager
 
 {
-
   private String fileName;
 
+  /**
+   * A single arguement constructor initializing the filename
+   * @param fileName the filename to replace with
+   */
   public RoomModelManager(String fileName)
   {
     this.fileName = fileName;
   }
 
+  /**
+   * gets all the rooms in the Roomlist
+   * @return the Roomlist.
+   */
   public RoomList getAllRooms()
   {
     RoomList allRooms = new RoomList();
