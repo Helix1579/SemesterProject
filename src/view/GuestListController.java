@@ -26,7 +26,6 @@ public class GuestListController extends Tab
   @FXML private Button getAllGuest;
   @FXML private Button exitButton;
   @FXML private TableView<Guest> allGuestTable;
-  private TableView.TableViewSelectionModel selectionModel;
   @FXML private TableColumn<Guest,String> nameCol;
   @FXML private TableColumn<Guest,String> roomNumCol;
   @FXML private TableColumn<Guest,LocalDate> CheckOutCol;

@@ -1,5 +1,6 @@
 package view;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
@@ -74,6 +75,9 @@ public class ViewHandler
       case "GuestInfo":
         root = loadGuestInfoPage();
         break;
+      case "Homepage":
+        root = loadHomepage();
+        break;
     }
     scene.setRoot(root);
     String title = "";
@@ -85,8 +89,8 @@ public class ViewHandler
 
     window.setTitle(title);
     window.setScene(scene);
-    window.setWidth(root.getPrefWidth());
-    window.setHeight(root.getPrefHeight());
+    window.setWidth(640);
+    window.setHeight(470);
     window.show();
   }
 
