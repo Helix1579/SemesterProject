@@ -20,13 +20,13 @@ public class GuestListController extends Tab
 
   @FXML private Button getAllGuest;
   @FXML private Button exitButton;
-  @FXML private TableView<GuestList> allGuestTable;
+  @FXML private TableView<Guest> allGuestTable;
   private TableView.TableViewSelectionModel selectionModel;
-  private TableColumn<GuestList,String> nameCol;
-  private TableColumn<GuestList,String> roomNumCol;
-  private TableColumn<GuestList,LocalDate> CheckOutCol;
-  private TableColumn<GuestList,String> phNumCol;
-  private TableColumn<GuestList,LocalDate> CheckInCol;
+  private TableColumn<Guest,String> nameCol;
+  private TableColumn<Guest,String> roomNumCol;
+  private TableColumn<Guest,LocalDate> CheckOutCol;
+  private TableColumn<Guest,String> phNumCol;
+  private TableColumn<Guest,LocalDate> CheckInCol;
   private MyActionListener listener;
 
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
@@ -42,27 +42,19 @@ public class GuestListController extends Tab
     this.modelManager = modelManager;
     listener = new MyActionListener();
 
-    allGuestTable = new TableView<GuestList>();
-    selectionModel = allGuestTable.getSelectionModel();
-
-    nameCol = new TableColumn<GuestList, String>("Name");
-    nameCol.setCellValueFactory(new PropertyValueFactory<GuestList, String>("name"));
+    nameCol.setCellValueFactory(new PropertyValueFactory<Guest, String>("name"));
     nameCol.setPrefWidth(100);
 
-    roomNumCol = new TableColumn<GuestList, String>("Room No.");
-    roomNumCol.setCellValueFactory(new PropertyValueFactory<GuestList, String>("roomNumber"));
+    roomNumCol.setCellValueFactory(new PropertyValueFactory<Guest, String>("roomNumber"));
     roomNumCol.setPrefWidth(100);
 
-    CheckInCol = new TableColumn<GuestList, LocalDate>("Check-In Date");
-    CheckInCol.setCellValueFactory(new PropertyValueFactory<GuestList, LocalDate>("checkInDate"));
+    CheckInCol.setCellValueFactory(new PropertyValueFactory<Guest, LocalDate>("checkInDate"));
     CheckInCol.setPrefWidth(100);
 
-    CheckOutCol = new TableColumn<GuestList, LocalDate>("Check-Out Date");
-    CheckOutCol.setCellValueFactory(new PropertyValueFactory<GuestList, LocalDate>("checkOutDate"));
+    CheckOutCol.setCellValueFactory(new PropertyValueFactory<Guest, LocalDate>("checkOutDate"));
     CheckOutCol.setPrefWidth(100);
 
-    phNumCol = new TableColumn<GuestList, String>("Phone No.");
-    phNumCol.setCellValueFactory(new PropertyValueFactory<GuestList, String>("phoneNumber"));
+    phNumCol.setCellValueFactory(new PropertyValueFactory<Guest, String>("phoneNumber"));
     phNumCol.setPrefWidth(100);
   }
 
@@ -81,7 +73,7 @@ public class GuestListController extends Tab
 
     for (int i = 0; i < guests.size(); i++)
     {
-      //allGuestTable.getItems().add(guests.get(i));
+      allGuestTable.getItems().add(guests.get(i));
     }
   }
 

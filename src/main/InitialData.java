@@ -41,7 +41,6 @@ public class InitialData
     {
       System.out.println("File was not found, or could not be opened");
     }
-
     try
     {
       MyFileHandler.writeToBinaryFile("guests.bin", guests);
