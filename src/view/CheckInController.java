@@ -47,7 +47,7 @@ public class CheckInController
        LocalDate CheckOutDate = CheckOutDateDP.getValue();
        String roomType = getRoomTypeValue();
 
-       modelManager.addGuest(new Guest(name,email, dateOfBirth,roomNumber,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
+       modelManager.addGuest(new Guest(name,email, dateOfBirth,phone,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
      }
    }
 

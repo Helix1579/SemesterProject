@@ -3,15 +3,15 @@ package model;
 public class Rooms
 {
 
-  private int King;
-  private int Twin;
-  private int SingleBed;
-  private int DoubleBed;
-  private int TripleBed;
+  private String King;
+  private String Twin;
+  private String SingleBed;
+  private String DoubleBed;
+  private String TripleBed;
   private String RoomType;
-  private int RoomNo;
-
-  public Rooms( int King , int Twin , int SingleBed , int DoubleBed , int TripleBed , String RoomType , int RoomNo)
+  private int RoomNumber;
+  private  int RoomPrice;
+  public Rooms( String King , String Twin , String SingleBed , String DoubleBed ,String  TripleBed , String RoomType , int RoomNumber, int RoomPrice)
   {
 
     this.King = King;
@@ -20,38 +20,39 @@ public class Rooms
     this.DoubleBed = DoubleBed;
     this.TripleBed = TripleBed;
     this.RoomType = RoomType;
-    this.RoomNo = RoomNo;
+    this.RoomNumber = RoomNumber;
+    this.RoomPrice = RoomPrice;
   }
 
 
-  public int getKing()
+  public String getKing()
   {
     return King;
   }
 
-  public int getTwin()
+  public String getTwin()
   {
     return Twin;
   }
 
-  public int getSingleBed()
+  public String getSingleBed()
   {
     return SingleBed;
   }
 
-  public int getDoubleBed()
+  public String getDoubleBed()
   {
     return DoubleBed;
   }
 
-  public int getTripleBed()
+  public String getTripleBed()
   {
     return TripleBed;
   }
 
   public int getRoomNo()
   {
-    return RoomNo;
+    return RoomNumber;
   }
 
   public String getRoomType()
@@ -59,42 +60,40 @@ public class Rooms
     return RoomType;
   }
 
+  public  int getRoomPrice(){return RoomPrice;}
 
 
-  public void setKing(int king)
+
+  public void setKing(String king) {this.King = king;}
+
+  public void setTwin(String twin)
   {
-    King = king;
+    this.Twin = twin;
   }
 
-  public void setTwin(int twin)
+  public void setSingleBed(String singleBed)
   {
-    Twin = twin;
+    this.SingleBed = singleBed;
   }
 
-  public void setSingleBed(int singleBed)
-  {
-    SingleBed = singleBed;
-  }
-
-  public void setDoubleBed(int doubleBed)
+  public void setDoubleBed(String doubleBed)
   {
     this.DoubleBed = doubleBed;
   }
 
-  public void setTripleBed(int tripleBed)
-  {
-    this.TripleBed = tripleBed;
-  }
+  public void setTripleBed(String tripleBed) {this.TripleBed = tripleBed;}
 
-  public void setRoomNo(int roomNo)
+  public void setRoomNo(int roomNumber)
   {
-    RoomNo = roomNo;
+    this.RoomNumber = roomNumber;
   }
 
   public void setRoomType(String roomType)
   {
-    RoomType = roomType;
+    this.RoomType = roomType;
   }
+
+  public void setRoomPrice(int RoomPrice){this.RoomPrice = RoomPrice;}
 
   public boolean equals (Object obj)
   {

@@ -25,4 +25,9 @@ public Rooms[] getAllRooms(){
 
 
 }
+
+  public int size()
+  {
+    return rooms.size();
+  }
 }
