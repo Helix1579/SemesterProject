@@ -31,9 +31,9 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <TableView layoutX="14.0" layoutY="100.0" prefHeight="320.0" prefWidth="615.0">
+      <TableView fx:id="allGuestTable" layoutX="14.0" layoutY="100.0" prefHeight="320.0" prefWidth="615.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
