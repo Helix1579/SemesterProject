@@ -1,5 +1,6 @@
 package view;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
@@ -17,6 +18,7 @@ public class ViewHandler
   private GuestInformationController guestInformationController;
   private CheckInController check_inController;
   private CheckOutController checkOutController;
+  private CancelController cancelController;
 
   private GuestModelManager modelManager;
 
@@ -43,8 +45,17 @@ public class ViewHandler
       case "CheckOut":
         root = loadCheckOutPage();
         break;
-      case "Homepage":
-        root = loadHomepage();
+      case "CancelBooking":
+        root = loadCancelBooking();
+        break;
+      case "GuestList":
+        root = loadGuestList();
+        break;
+      case "AvailableRooms":
+        //root = loadAvailableRooms();
+        break;
+      case "GuestInfo":
+        root = loadGuestInfoPage();
         break;
     }
     scene.setRoot(root);
@@ -162,14 +173,12 @@ public class ViewHandler
   {
     if(homepageController == null)
     {
-      System.out.println("1");
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Homepage.fxml"));
         Region root = loader.load();
         homepageController = loader.getController();
-        System.out.println(homepageController);
         homepageController.init(this, modelManager, root);
       }
       catch (Exception ex)
@@ -183,5 +192,27 @@ public class ViewHandler
     }
     return homepageController.getRoot();
   }
-
+  public Region loadCancelBooking()
+  {
+    if (cancelController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("CancelBooking.fxml"));
+        Region root = loader.load();
+        cancelController = loader.getController();
+        cancelController.init(this, modelManager, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      cancelController.reset();
+    }
+    return homepageController.getRoot();
+  }
 }

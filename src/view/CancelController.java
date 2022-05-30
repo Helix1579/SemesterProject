@@ -3,6 +3,7 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestList;
 import model.GuestModelManager;
@@ -10,6 +11,8 @@ import model.GuestModelManager;
 public class CancelController
 {
   private GuestModelManager modelManager;
+  private Region root;
+  private ViewHandler viewHandler;
 
   @FXML Button BackB;
   @FXML Button CancelB;
@@ -21,6 +24,22 @@ public class CancelController
   @FXML DatePicker CheckInDP;
   @FXML DatePicker CheckOutDP;
   @FXML ComboBox<Guest> GuestCB;
+
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
+  {
+    this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
+  }
+  public void reset()
+  {
+
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
 
   private void updateGuestBox()
   {

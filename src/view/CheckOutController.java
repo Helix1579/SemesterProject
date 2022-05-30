@@ -60,7 +60,7 @@ public class CheckOutController
     }
   }
 
-  public void eventhandler(ActionEvent e)
+  public void eventHandler(ActionEvent e)
   {
     if(e.getSource() == SearchB)
     {
