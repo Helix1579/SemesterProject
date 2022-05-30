@@ -25,46 +25,43 @@ public class ViewHandler
     this.modelManager = modelManager;
     scene = new Scene(new Region());
   }
+
   public void start(Stage window)
   {
     this.window = window;
-    openPage("Homepage.fxml");
+    openView("Homepage");
   }
 
-  public void openPage(String id)
+  public void openView(String id)
   {
     Region root = null;
     switch (id)
     {
       case "CheckIn":
-        //root = loadCheckInPage();
+        root = loadCheckInPage();
         break;
       case "CheckOut":
         root = loadCheckOutPage();
         break;
-      case "GuestInformation":
-        root = loadGuestInfoPage();
-        break;
-      case "GuestList":
-        root = loadGuestList();
-        break;
       case "Homepage":
         root = loadHomepage();
+        break;
     }
     scene.setRoot(root);
     String title = "";
 
-    if(root.getUserData() != null)
+    if(root.getUserData() !=null)
     {
-      title+= root.getUserData();
+      title += root.getUserData();
     }
+
     window.setTitle(title);
     window.setScene(scene);
     window.setWidth(root.getPrefWidth());
     window.setHeight(root.getPrefHeight());
     window.show();
   }
-/*
+
   public Region loadCheckInPage()
   {
     if(check_inController == null)
@@ -88,7 +85,7 @@ public class ViewHandler
     }
     return check_inController.getRoot();
   }
-*/
+
   public Region loadCheckOutPage()
   {
     if(checkOutController == null)
@@ -163,14 +160,16 @@ public class ViewHandler
 
   public Region loadHomepage()
   {
-    //if(check_inController == null)
+    if(homepageController == null)
     {
+      System.out.println("1");
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Homepage.fxml"));
         Region root = loader.load();
         homepageController = loader.getController();
+        System.out.println(homepageController);
         homepageController.init(this, modelManager, root);
       }
       catch (Exception ex)
@@ -178,7 +177,7 @@ public class ViewHandler
         ex.printStackTrace();
       }
     }
-    //else
+    else
     {
       homepageController.reset();
     }

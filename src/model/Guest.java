@@ -19,7 +19,7 @@ public class Guest implements Serializable
   private String roomNumber;
 
   public Guest(String name, String email, LocalDate dateOfBirth, String phoneNumber, String nationality, String idProof,
-      LocalDate checkInDate, LocalDate checkOutDate,String roomType, String roomNumber) //add room num
+      LocalDate checkInDate, LocalDate checkOutDate,String roomType, String roomNumber)
   {
     this.name = name;
     this.email = email;

@@ -1,13 +1,12 @@
 package view;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Region;
 
 import model.GuestModelManager;
-
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class HomepageController
@@ -48,27 +47,27 @@ public class HomepageController
         }
         if (e.getSource() == CheckInButton)
         {
-            viewHandler.openPage("CheckIn");
+            viewHandler.openView("CheckIn");
         }
         if (e.getSource() == CheckOutButton)
         {
-            viewHandler.openPage("CheckOut");
+            viewHandler.openView("CheckOut");
         }
         if (e.getSource() == CancelBookingButton)
         {
-            viewHandler.openPage("CancelBooking");
+            viewHandler.openView("CancelBooking");
         }
         if (e.getSource() == GuestListButton)
         {
-            viewHandler.openPage("GuestList");
+            viewHandler.openView("GuestList");
         }
         if (e.getSource() == RoomsButton)
         {
-            viewHandler.openPage("AvailableRooms");
+            viewHandler.openView("AvailableRooms");
         }
         if (e.getSource() == UpdateInfoButton)
         {
-            viewHandler.openPage("GuestInfo");
+            viewHandler.openView("GuestInfo");
         }
     }
 }
