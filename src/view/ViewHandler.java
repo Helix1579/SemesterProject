@@ -1,5 +1,6 @@
 package view;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
@@ -55,6 +56,9 @@ public class ViewHandler
         break;
       case "GuestInfo":
         root = loadGuestInfoPage();
+        break;
+      case "Homepage":
+        root = loadHomepage();
         break;
     }
     scene.setRoot(root);
