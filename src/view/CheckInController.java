@@ -3,6 +3,7 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestModelManager;
 
@@ -10,6 +11,9 @@ import java.time.LocalDate;
 
 public class CheckInController
 {
+  private Region root;
+  private ViewHandler viewHandler;
+
   private GuestModelManager modelManager;
   @FXML
   public RadioButton King;
@@ -29,9 +33,12 @@ public class CheckInController
 
   @FXML private DatePicker dateOfBirthDP, CheckInDateDP, CheckOutDateDP;
 
-  @FXML private Label welcomeText;
-
-
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
+  {
+    this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
+  }
    public void handleAction(ActionEvent e)
    {
      if (e.getSource() == CheckInButton)
@@ -77,5 +84,13 @@ public class CheckInController
     }
     return roomType;
   }
+  public void reset()
+  {
 
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
 }

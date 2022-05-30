@@ -47,9 +47,9 @@
                      </toggleGroup>
                   </RadioButton>
                   <RadioButton fx:id="Twin" layoutX="205.0" layoutY="86.0" mnemonicParsing="false" text="Twin" toggleGroup="$roomType" />
-                  <RadioButton fx:id="Doublebed" layoutX="203.0" layoutY="147.0" mnemonicParsing="false" text=" Double bed" toggleGroup="$roomType" />
-                  <RadioButton fx:id="Triplebed" layoutX="206.0" layoutY="182.0" mnemonicParsing="false" text="Triple bed" toggleGroup="$roomType" />
-                  <RadioButton fx:id="Singlebed" layoutX="204.0" layoutY="116.0" mnemonicParsing="false" text="Single bed" toggleGroup="$roomType" />
+                  <RadioButton fx:id="DoubleBed" layoutX="203.0" layoutY="147.0" mnemonicParsing="false" text=" Double bed" toggleGroup="$roomType" />
+                  <RadioButton fx:id="TripleBed" layoutX="206.0" layoutY="182.0" mnemonicParsing="false" text="Triple bed" toggleGroup="$roomType" />
+                  <RadioButton fx:id="SingleBed" layoutX="204.0" layoutY="116.0" mnemonicParsing="false" text="Single bed" toggleGroup="$roomType" />
                   <Button fx:id="CheckInButton" layoutX="135.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleAction" prefHeight="41.0" prefWidth="73.0" text="Check in" />
                   <TextField alignment="CENTER" layoutX="97.0" layoutY="14.0" text="Room  data" />
                   <Text layoutX="29.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room type" />

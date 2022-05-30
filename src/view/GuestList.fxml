@@ -33,8 +33,11 @@
       </Button>
       <TableView fx:id="allGuestTable" layoutX="14.0" layoutY="100.0" prefHeight="320.0" prefWidth="615.0">
         <columns>
-          <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="nameCol" prefWidth="216.0" text="Name" />
+          <TableColumn fx:id="CheckInCol" prefWidth="83.20001220703125" text="Check-In" />
+            <TableColumn fx:id="CheckOutCol" prefWidth="100.0" text="Check-Out" />
+            <TableColumn fx:id="roomNumCol" prefWidth="92.8001708984375" text="Room Number" />
+            <TableColumn fx:id="phNumCol" prefWidth="122.39995117187505" text="Phone Number" />
         </columns>
       </TableView>
    </children>

@@ -22,11 +22,11 @@ public class GuestListController extends Tab
   @FXML private Button exitButton;
   @FXML private TableView<Guest> allGuestTable;
   private TableView.TableViewSelectionModel selectionModel;
-  private TableColumn<Guest,String> nameCol;
-  private TableColumn<Guest,String> roomNumCol;
-  private TableColumn<Guest,LocalDate> CheckOutCol;
-  private TableColumn<Guest,String> phNumCol;
-  private TableColumn<Guest,LocalDate> CheckInCol;
+  @FXML private TableColumn<Guest,String> nameCol;
+  @FXML private TableColumn<Guest,String> roomNumCol;
+  @FXML private TableColumn<Guest,LocalDate> CheckOutCol;
+  @FXML private TableColumn<Guest,String> phNumCol;
+  @FXML private TableColumn<Guest,LocalDate> CheckInCol;
   private MyActionListener listener;
 
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
