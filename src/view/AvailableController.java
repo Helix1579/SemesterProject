@@ -75,6 +75,10 @@ public class AvailableController extends Tab
       allRoomsTable.getItems().add(rooms.get(i));
     }
   }
+  public void handleAction(ActionEvent e)
+  {
+
+  }
 
 
   public void reset()
