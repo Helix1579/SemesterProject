@@ -2,10 +2,7 @@ package view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestList;
@@ -31,13 +28,15 @@ public class CheckOutController
   @FXML private Button CalcB;
   @FXML private Button BackB;
   @FXML private Button CheckoutB;
-  @FXML private TextField AddressTF;
+  @FXML private TextField EmailTF;
   @FXML private TextField PriceTF;
   @FXML private TextField PhoneTF;
   @FXML private ComboBox<Guest> NameCB;
   @FXML private TextField RoomTypeTF;
   @FXML private DatePicker CheckinDP;
   @FXML private DatePicker CheckoutDP;
+  @FXML private CheckBox DiscountCB;
+  @FXML private CheckBox SmokingCB;
 
 
   /**
@@ -89,6 +88,7 @@ public class CheckOutController
       if(temp != null)
       {
         NameTF.setText(temp.getName());
+        EmailTF.setText(temp.getEmail());
         PhoneTF.setText((temp.getPhoneNumber()));
         RoomTypeTF.setText(temp.getRoomType());
         CheckinDP.setValue(temp.getCheckInDate());
@@ -96,11 +96,20 @@ public class CheckOutController
     }
     else if (e.getSource() == CalcB)
     {
+      int discount = 0;
+      int price = 0;
+      int smoking = 0;
       LocalDate checkIn = CheckinDP.getValue();
       LocalDate checkOut = CheckoutDP.getValue();
       int stay = Period.between(checkIn , checkOut).getDays();
-    //  int total = stay * ;
-      //PriceTF.setText(String.valueOf(total));
+      if (DiscountCB.isSelected())
+      {
+        discount += price*0.1;
+      }
+      if (SmokingCB.isSelected())
+      {
+        smoking += 25;
+      }
     }
 
     else if(e.getSource() == CheckoutB)
