@@ -16,7 +16,7 @@
       <Button fx:id="BackB" layoutX="20.0" layoutY="425.0" mnemonicParsing="false" onAction="#eventHandler" text="Back" />
       <TextField fx:id="NameTF" layoutX="325.0" layoutY="155.0" />
       <TextField fx:id="PhoneTF" layoutX="325.0" layoutY="203.0" />
-      <TextField fx:id="RoomTF" layoutX="325.0" layoutY="251.0" />
+      <TextField fx:id="RoomNumberTF" layoutX="325.0" layoutY="251.0" />
       <DatePicker fx:id="CheckInDP" layoutX="326.0" layoutY="297.0" prefHeight="21.0" prefWidth="149.0" />
       <DatePicker fx:id="CheckOutDP" layoutX="325.0" layoutY="339.0" prefHeight="11.0" prefWidth="149.0" />
       <Label fx:id="NameLB" layoutX="169.0" layoutY="157.0" text="Name:">
@@ -29,7 +29,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="RoomLB" layoutX="167.0" layoutY="253.0" text="Room NO:">
+      <Label fx:id="RoomTF" layoutX="167.0" layoutY="253.0" text="Room NO:">
          <font>
             <Font size="15.0" />
          </font>

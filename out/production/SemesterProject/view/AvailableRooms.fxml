@@ -34,8 +34,8 @@
         <TableView fx:id="allRoomsTable" layoutX="14.0" layoutY="100.0" prefHeight="320.0" prefWidth="615.0">
             <columns>
                 <TableColumn fx:id="RoomsNumber" prefWidth="211.199951171875" text="Room number" />
-                <TableColumn fx:id="RoomsType" prefWidth="97.60003662109375" text="Room type" />
-                <TableColumn fx:id="RoomPrice" prefWidth="92.0" text="Room price" />
+                <TableColumn fx:id="RoomsType" prefWidth="187.0" text="Room type" />
+                <TableColumn fx:id="RoomPrice" prefWidth="215.0" text="Room price" />
             </columns>
         </TableView>
         <Button fx:id="backButton" layoutX="14.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleAction" prefHeight="25.0" prefWidth="100.0" text="Back" />

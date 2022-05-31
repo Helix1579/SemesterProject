@@ -22,7 +22,7 @@ public class CancelController
   @FXML Button SearchB;
   @FXML TextField NameTF;
   @FXML TextField PhoneTF;
-  @FXML TextField RoomTF;
+  @FXML TextField RoomNumberTF;
   @FXML DatePicker CheckInDP;
   @FXML DatePicker CheckOutDP;
   @FXML ComboBox<Guest> GuestCB;
@@ -33,6 +33,10 @@ public class CancelController
     this.root = root;
     this.viewHandler = viewHandler;
   }
+
+
+
+
   public void eventHandler(ActionEvent e){
     if(e.getSource() == ExitB)
     {
@@ -45,6 +49,7 @@ public class CancelController
     else  if (e.getSource()== CancelB){
       JOptionPane.showMessageDialog(null,"Cancel complete");
     }
+
 
   }
 
@@ -82,6 +87,27 @@ public class CancelController
   }
   public void searchHandle(ActionEvent e)
   {
+    if(e.getSource() == SearchB)
+    {
+      UpdateGuestBox();
+      Guest temp = GuestCB.getSelectionModel().getSelectedItem();
 
+      if(temp != null)
+      {
+        NameTF.setText(temp.getName());
+        PhoneTF.setText((temp.getPhoneNumber()));
+        RoomNumberTF.setText(temp.getRoomNumber());
+
+        CheckOutDP.setValue(temp.getCheckOutDate());
+
+      }
+    }
+  }
+
+  private void UpdateGuestBox()
+  {
+  }
+
+  {
   }
 }
