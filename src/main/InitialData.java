@@ -2,6 +2,8 @@ package main;
 
 import model.Guest;
 import model.GuestList;
+import model.RoomList;
+import model.Rooms;
 import utils.MyFileHandler;
 
 import java.io.FileNotFoundException;
@@ -18,11 +20,13 @@ public class InitialData
   public static void main(String[] args)
   {
     GuestList guests = new GuestList();
+    RoomList rooms = new RoomList();
     String[] guestArray = null;
+    String[] roomsArray = null;
 
     try
     {
-      guestArray = MyFileHandler.readArrayFromTextFile("guest.txt");
+      guestArray = MyFileHandler.readArrayFromTextFile("Guest.txt");
 
       for (int i = 0; i < guestArray.length; i++)
       {
@@ -39,7 +43,28 @@ public class InitialData
         String roomType = tempArray[8];
         String roomNumber = tempArray[9];
 
-        guests.add(new Guest(name,email, dateOfBirth, phoneNumber, nationality, idProof, checkInDate, checkOutDate,roomType,roomNumber));
+        guests.add(new Guest(name, email, dateOfBirth, phoneNumber, nationality,
+            idProof, checkInDate, checkOutDate, roomType, roomNumber));
+      }
+    }
+    catch (FileNotFoundException e)
+    {
+      System.out.println("File was not found, or could not be opened");
+    }
+
+    try
+    {
+      roomsArray = MyFileHandler.readArrayFromTextFile("Rooms.txt");
+
+      for (int i = 0; i < roomsArray.length; i++)
+      {
+        String temp = roomsArray[i];
+        String[] tempArray = temp.split(" , ");
+        String roomNumber = tempArray[0];
+        String roomType = tempArray[1];
+        String roomPrice = tempArray[2];
+
+        rooms.add(new Rooms(roomNumber, roomType, roomPrice));
       }
     }
     catch (FileNotFoundException e)
@@ -49,6 +74,7 @@ public class InitialData
     try
     {
       MyFileHandler.writeToBinaryFile("guests.bin", guests);
+      MyFileHandler.writeToBinaryFile("rooms.bin", rooms);
     }
     catch (FileNotFoundException e)
     {
