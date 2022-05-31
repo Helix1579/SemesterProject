@@ -32,7 +32,6 @@ public class GuestListController extends Tab
   @FXML private TableColumn<Guest,String> phNumCol;
   @FXML private TableColumn<Guest,LocalDate> CheckInCol;
   @FXML private Button backButton;
-  private MyActionListener listener;
 
   /**
    * Requires to switch between different pages
@@ -55,7 +54,6 @@ public class GuestListController extends Tab
   public void AllGuest(GuestModelManager modelManager)
   {
     this.modelManager = modelManager;
-    listener = new MyActionListener();
 
     nameCol.setCellValueFactory(new PropertyValueFactory<Guest, String>("name"));
     nameCol.setPrefWidth(100);
@@ -110,18 +108,25 @@ public class GuestListController extends Tab
     }
   }
 
-  private class MyActionListener implements EventHandler<ActionEvent>
-  {
+
     public void handle(ActionEvent e)
     {
       if (e.getSource() == getAllGuest)
       {
         update();
       }
+      else if (e.getSource() == exitButton)
+      {
+        System.exit(1);
+      }
+      else if (e.getSource() == backButton)
+      {
+        viewHandler.openView("Homepage");
+      }
     }
-  }
   public Region getRoot()
   {
+    System.out.println("Hello !!");
     return root;
   }
 

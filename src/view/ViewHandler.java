@@ -89,8 +89,8 @@ public class ViewHandler
 
     window.setTitle(title);
     window.setScene(scene);
-    window.setWidth(640);
-    window.setHeight(470);
+    window.setWidth(root.getPrefWidth());
+    window.setHeight(root.getPrefHeight());
     window.show();
   }
 
@@ -174,6 +174,7 @@ public class ViewHandler
   {
     if(guestListController == null)
     {
+      System.out.println("Hello !!");
       try
       {
         FXMLLoader loader = new FXMLLoader();

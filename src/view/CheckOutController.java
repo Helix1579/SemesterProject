@@ -112,7 +112,7 @@ public class CheckOutController
     {
       System.exit(1);
     }
-    if (e.getSource() == BackB)
+    else if (e.getSource() == BackB)
     {
       viewHandler.openView("Homepage");
     }
