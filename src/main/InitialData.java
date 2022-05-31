@@ -8,6 +8,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * To write from teext file to binary file and also some initial data to start the program
+ * @author Vatsal Jariwala
+ * @version 2.0
+ */
 public class InitialData
 {
   public static void main(String[] args)

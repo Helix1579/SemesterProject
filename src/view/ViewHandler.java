@@ -9,6 +9,11 @@ import model.GuestModelManager;
 
 import java.io.IOException;
 
+/**
+ * Class required to switch between different pages
+ * @author Yashraj Mashruwala
+ * @version 2.0
+ */
 public class ViewHandler
 {
   private Scene scene;
@@ -22,18 +27,31 @@ public class ViewHandler
 
   private GuestModelManager modelManager;
 
+  /**
+   *  Single Arguement consstructor initialising Viewhandler
+   * @param modelManager the modelmanager to replace with
+   * @throws IOException Constructs an IOException with null as its error detail message.
+   */
   public ViewHandler(GuestModelManager modelManager) throws IOException
   {
     this.modelManager = modelManager;
     scene = new Scene(new Region());
   }
 
+  /**
+   * Allows to load the stage
+   * @param window the window to replace with
+   */
   public void start(Stage window)
   {
     this.window = window;
     openView("Homepage");
   }
 
+  /**
+   * to switch between pages
+   * @param id the id to replace with
+   */
   public void openView(String id)
   {
     Region root = null;
@@ -76,6 +94,10 @@ public class ViewHandler
     window.show();
   }
 
+  /**
+   *
+   * @return
+   */
   public Region loadCheckInPage()
   {
     if(check_inController == null)

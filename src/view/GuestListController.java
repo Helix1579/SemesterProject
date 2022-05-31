@@ -12,6 +12,11 @@ import model.GuestModelManager;
 
 import java.time.LocalDate;
 
+/**
+ *  Class containing all the action events happening at GuestList page
+ * @author Yashraj Mashruwala
+ * @version 2.0
+ */
 public class GuestListController extends Tab
 {
   private ViewHandler viewHandler;
@@ -28,6 +33,12 @@ public class GuestListController extends Tab
   @FXML private TableColumn<Guest,LocalDate> CheckInCol;
   @FXML private Button backButton;
 
+  /**
+   * Requires to switch between different pages
+   * @param viewHandler the viewHandler to replace with
+   * @param modelManager the modelmanager to replace with
+   * @param root the root to replace with
+   */
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
@@ -36,6 +47,10 @@ public class GuestListController extends Tab
     reload();
   }
 
+  /**
+   * Gets all the guest objects containing guest information from the Guestlist
+   * @param modelManager the modelmanager to replace with
+   */
   public void AllGuest(GuestModelManager modelManager)
   {
     this.modelManager = modelManager;
@@ -56,7 +71,8 @@ public class GuestListController extends Tab
     phNumCol.setPrefWidth(100);
   }
 
-  public void reload()
+
+  private void reload()
   {
     if ((modelManager != null))
     {
@@ -64,7 +80,7 @@ public class GuestListController extends Tab
     }
   }
 
-  public void update()
+  private void update()
   {
     allGuestTable.getItems().clear();
     GuestList guests = modelManager.getAllGuest();
@@ -75,6 +91,11 @@ public class GuestListController extends Tab
     }
   }
 
+
+  /**
+   * this method contains all the action events happening on the page
+   * @param e Creates and returns a copy of this event with the specified event source and target the object on which the Event initially occurred
+   */
   public void handleAction(ActionEvent e)
   {
     if (e.getSource() == exitButton)
