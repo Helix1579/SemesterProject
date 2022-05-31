@@ -1,5 +1,6 @@
 package view;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
@@ -8,6 +9,11 @@ import model.GuestModelManager;
 
 import java.io.IOException;
 
+/**
+ * Class required to switch between different pages
+ * @author Yashraj Mashruwala
+ * @version 2.0
+ */
 public class ViewHandler
 {
   private Scene scene;
@@ -17,21 +23,35 @@ public class ViewHandler
   private GuestInformationController guestInformationController;
   private CheckInController check_inController;
   private CheckOutController checkOutController;
+  private CancelController cancelController;
 
   private GuestModelManager modelManager;
 
+  /**
+   *  Single Arguement consstructor initialising Viewhandler
+   * @param modelManager the modelmanager to replace with
+   * @throws IOException Constructs an IOException with null as its error detail message.
+   */
   public ViewHandler(GuestModelManager modelManager) throws IOException
   {
     this.modelManager = modelManager;
     scene = new Scene(new Region());
   }
 
+  /**
+   * Allows to load the stage
+   * @param window the window to replace with
+   */
   public void start(Stage window)
   {
     this.window = window;
     openView("Homepage");
   }
 
+  /**
+   * to switch between pages
+   * @param id the id to replace with
+   */
   public void openView(String id)
   {
     Region root = null;
@@ -42,6 +62,18 @@ public class ViewHandler
         break;
       case "CheckOut":
         root = loadCheckOutPage();
+        break;
+      case "CancelBooking":
+        root = loadCancelBooking();
+        break;
+      case "GuestList":
+        root = loadGuestList();
+        break;
+      case "AvailableRooms":
+        //root = loadAvailableRooms();
+        break;
+      case "GuestInfo":
+        root = loadGuestInfoPage();
         break;
       case "Homepage":
         root = loadHomepage();
@@ -57,11 +89,15 @@ public class ViewHandler
 
     window.setTitle(title);
     window.setScene(scene);
-    window.setWidth(root.getPrefWidth());
-    window.setHeight(root.getPrefHeight());
+    window.setWidth(640);
+    window.setHeight(470);
     window.show();
   }
 
+  /**
+   *
+   * @return
+   */
   public Region loadCheckInPage()
   {
     if(check_inController == null)
@@ -162,14 +198,12 @@ public class ViewHandler
   {
     if(homepageController == null)
     {
-      System.out.println("1");
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Homepage.fxml"));
         Region root = loader.load();
         homepageController = loader.getController();
-        System.out.println(homepageController);
         homepageController.init(this, modelManager, root);
       }
       catch (Exception ex)
@@ -183,5 +217,27 @@ public class ViewHandler
     }
     return homepageController.getRoot();
   }
-
+  public Region loadCancelBooking()
+  {
+    if (cancelController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("CancelBooking.fxml"));
+        Region root = loader.load();
+        cancelController = loader.getController();
+        cancelController.init(this, modelManager, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      cancelController.reset();
+    }
+    return homepageController.getRoot();
+  }
 }

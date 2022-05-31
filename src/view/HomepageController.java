@@ -9,6 +9,11 @@ import javafx.scene.layout.Region;
 import model.GuestModelManager;
 import java.io.IOException;
 
+/**
+ *  Class containing all the action events happening at GuestList page
+ * @author Dan Chisaru
+ * @version 2.0
+ */
 public class HomepageController
 {
     private GuestModelManager modelManager;
@@ -32,6 +37,13 @@ public class HomepageController
         return root;
     }
 
+
+    /**
+     * Requires to switch between different pages
+     * @param viewHandler the viewHandler to replace with
+     * @param modelManager the modelmanager to replace with
+     * @param root the root to replace with
+     */
     public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
     {
         this.modelManager = modelManager;
@@ -39,6 +51,11 @@ public class HomepageController
         this.viewHandler = viewHandler;
     }
 
+
+    /**
+     * this method contains all the action events happening on the page
+     * @param e Creates and returns a copy of this event with the specified event source and target the object on which the Event initially occurred
+     */
     public void handleAction(ActionEvent e) throws IOException
     {
         if ((e.getSource()) == ExitButton)

@@ -12,6 +12,11 @@ import model.Rooms;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Class containing all the action events happening at Update Guest Information page
+ * @author Yashraj Mashruwala
+ * @version 2.0
+ */
 public class GuestInformationController
 {
   private GuestModelManager modelManager;
@@ -31,6 +36,12 @@ public class GuestInformationController
   @FXML private ComboBox<Guest> GuestBox;
   @FXML private ComboBox<Rooms> RoomBox;
 
+  /**
+   * Requires to switch between different pages
+   * @param viewHandler the viewHandler to replace with
+   * @param modelManager the modelmanager to replace with
+   * @param root the root to replace with
+   */
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
@@ -38,6 +49,10 @@ public class GuestInformationController
     this.viewHandler = viewHandler;
   }
 
+
+  /**
+   * Gets all the Guest objects by name from the GuestList.
+   */
   public void UpdateGuestBox()
   {
     int index = GuestBox.getSelectionModel().getSelectedIndex();
@@ -58,6 +73,10 @@ public class GuestInformationController
     }
   }
 
+  /**
+   * this method contains all the action events happening on the page
+   * @param e Creates and returns a copy of this event with the specified event source and target the object on which the Event initially occurred
+   */
   public void handleAction(ActionEvent e)
   {
     if(e.getSource() == SearchButton)
@@ -98,6 +117,10 @@ public class GuestInformationController
     else if (e.getSource() == ExitButton)
     {
       System.exit(1);
+    }
+    if (e.getSource() == BackButton)
+    {
+      viewHandler.openView("Homepage");
     }
   }
 

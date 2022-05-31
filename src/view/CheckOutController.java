@@ -14,6 +14,11 @@ import model.GuestModelManager;
 import java.time.LocalDate;
 import java.time.Period;
 
+/**
+ *  Class containing all the action events happening at checkOut page
+ * @author Vatsal Jariwala
+ * @version 2.0
+ */
 public class CheckOutController
 {
   private GuestModelManager modelManager;
@@ -34,6 +39,13 @@ public class CheckOutController
   @FXML private DatePicker CheckinDP;
   @FXML private DatePicker CheckoutDP;
 
+
+  /**
+   * Requires to switch between different pages
+   * @param viewHandler the viewHandler to replace with
+   * @param modelManager the modelmanager to replace with
+   * @param root the root to replace with
+   */
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
@@ -41,6 +53,9 @@ public class CheckOutController
     this.viewHandler = viewHandler;
   }
 
+  /**
+   * Gets all the Guest objects by name from the GuestList.
+   */
   public void UpdateGuestBox()
   {
     int index = NameCB.getSelectionModel().getSelectedIndex();
@@ -60,7 +75,11 @@ public class CheckOutController
     }
   }
 
-  public void eventhandler(ActionEvent e)
+  /**
+   * this method contains all the action events happening on the page
+   * @param e Creates and returns a copy of this event with the specified event source and target the object on which the Event initially occurred
+   */
+  public void eventHandler(ActionEvent e)
   {
     if(e.getSource() == SearchB)
     {
@@ -92,6 +111,10 @@ public class CheckOutController
     else if(e.getSource() == ExitB)
     {
       System.exit(1);
+    }
+    if (e.getSource() == BackB)
+    {
+      viewHandler.openView("Homepage");
     }
 
   }

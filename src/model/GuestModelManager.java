@@ -6,15 +6,29 @@ import model.*;
 import java.io.*;
 import java.time.LocalDate;
 
+/**
+ * A class containing methods of guest objects.
+ * @auhtor Yashraj Mashruwala
+ * @version 2.0
+ */
+
 public class GuestModelManager
 {
   private String fileName;
 
+  /**
+   * single arguement constructor initialising the filename
+   * @param fileName the filenmae to replace with.
+   */
   public GuestModelManager(String fileName)
   {
     this.fileName = fileName;
   }
 
+  /**
+   * gets you the list called guestlist
+   * @return the guestlist containing all guest informstion.
+   */
   public GuestList getAllGuest()
   {
     GuestList allGuest = new GuestList();
@@ -37,6 +51,12 @@ public class GuestModelManager
     }
     return allGuest;
   }
+
+  /**
+   * Gets guestlist by the name of guest.
+   * @param name the name to replace with .
+   * @return the guests from guestlist by name.
+   */
   public GuestList getGuestFromName(String name)
   {
     GuestList guestFromName = new GuestList();
@@ -51,6 +71,11 @@ public class GuestModelManager
     }
     return guestFromName;
   }
+
+  /**
+   * saves the information of guest in a binary file
+   * @param guests the guests to replace with.
+   */
   public void saveGuest (GuestList guests)
   {
     try
@@ -66,6 +91,16 @@ public class GuestModelManager
       System.out.println("IO Error writing to file");
     }
   }
+
+  /**
+   * to change existing guest information in the guestlist
+   * @param name the name to replace with.
+   * @param phoneNumber the phone number to replace with.
+   * @param idProof the idproof to replace with
+   * @param checkInDate the checkin date to replace with.
+   * @param checkOutDate the checkout date to replace with.
+   * @param roomType the roomtype to replace with
+   */
   public  void changeGuestInformation(String name, String phoneNumber, String idProof,
       LocalDate checkInDate, LocalDate checkOutDate, String roomType)
   {
@@ -88,6 +123,11 @@ public class GuestModelManager
 
     saveGuest(allGuest);
   }
+
+  /**
+   * to add guest to guestlist
+   * @param guest the guest to replace with.
+   */
   public void addGuest(Guest guest){
     GuestList allGuests = getAllGuest();
         allGuests .add(guest);

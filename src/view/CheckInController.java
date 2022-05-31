@@ -7,36 +7,38 @@ import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestModelManager;
 
-import javax.swing.*;
 import java.time.LocalDate;
 
+/**
+ *  Class containing all the action events happening at checkin page
+ * @author Ivan
+ * @version 2.0
+ */
 public class CheckInController
 {
   private Region root;
   private ViewHandler viewHandler;
 
   private GuestModelManager modelManager;
-  @FXML
-  public RadioButton King;
-  @FXML
-  public RadioButton Twin;
-  @FXML
-  public RadioButton SingleBed;
-  @FXML
-  public RadioButton DoubleBed;
-  @FXML
-  public RadioButton TripleBed;
-  @FXML
-  public ToggleGroup roomType;
+  @FXML private RadioButton King;
+  @FXML private RadioButton Twin;
+  @FXML private RadioButton Normal;
+  @FXML private RadioButton Single;
+  @FXML private RadioButton Double;
+  @FXML private RadioButton Triple;
+  @FXML private ToggleGroup roomType;
   @FXML private Button CheckInButton;
-  @FXML private  Button GoBackButton;
-  @FXML
-  private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF,roomNumberTF;
-
+  @FXML private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF,roomNumberTF;
   @FXML private DatePicker dateOfBirthDP, CheckInDateDP, CheckOutDateDP;
+  @FXML private Button backButton;
+  @FXML private Button exitButton;
 
-  @FXML private Label welcomeText;
-
+  /**
+   * Requires to switch between different pages
+   * @param viewHandler the viewHandler to replace with
+   * @param modelManager the modelmanager to replace with
+   * @param root the root to replace with
+   */
   public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
@@ -44,9 +46,11 @@ public class CheckInController
     this.viewHandler = viewHandler;
   }
 
-
-
-  public void handleAction(ActionEvent e)
+  /**
+   * this method contains all the action events happening on the page
+   * @param e Creates and returns a copy of this event with the specified event source and target the object on which the Event initially occurred
+   */
+   public void handleAction(ActionEvent e)
    {
      if (e.getSource() == CheckInButton)
      {
@@ -62,16 +66,21 @@ public class CheckInController
        String roomType = getRoomTypeValue();
 
        modelManager.addGuest(new Guest(name,email, dateOfBirth,phone,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
-
-       JOptionPane.showMessageDialog(null,"Booking Created !!!");
      }
-     if (e.getSource() == GoBackButton)
+     if (e.getSource() == backButton)
      {
-
+       viewHandler.openView("Homepage");
+     }
+     if (e.getSource() == exitButton)
+     {
+       System.exit(1);
      }
    }
 
-
+  /**
+   *
+   * @return the type of room selected.
+    */
   public String getRoomTypeValue()
   {
     String roomType = null;
@@ -83,21 +92,24 @@ public class CheckInController
     {
       roomType = "Twin";
     }
-    if (SingleBed.isSelected())
+    else if(Normal.isSelected())
+    {
+      roomType = "Normal";
+    }
+    else if (Single.isSelected())
     {
       roomType = "Single Bed";
     }
-    else if (DoubleBed.isSelected())
+    else if (Double.isSelected())
     {
       roomType = "Double Bed";
     }
-    else if (TripleBed.isSelected())
+    else if (Triple.isSelected())
     {
       roomType = "Three Bed";
     }
     return roomType;
   }
-
   public void reset()
   {
 
