@@ -30,4 +30,18 @@ public Rooms[] getAllRooms(){
   {
     return rooms.size();
   }
+  public  void add(Rooms rooms){this.rooms.add(rooms);}
+
+  public Rooms get(int i)
+  {
+    if (i<rooms.size())
+    {
+      return rooms.get(i);
+
+    }
+    else
+    {
+      return null;
+    }
+  }
 }

@@ -3,13 +3,18 @@ package view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestModelManager;
 
+import javax.swing.*;
 import java.time.LocalDate;
 
 public class CheckInController
 {
+  private Region root;
+  private ViewHandler viewHandler;
+
   private GuestModelManager modelManager;
   @FXML
   public RadioButton King;
@@ -24,6 +29,7 @@ public class CheckInController
   @FXML
   public ToggleGroup roomType;
   @FXML private Button CheckInButton;
+  @FXML private  Button GoBackButton;
   @FXML
   private TextField nameTF, phoneTF,emailTF,nationalityTF,idTF,roomNumberTF;
 
@@ -31,8 +37,16 @@ public class CheckInController
 
   @FXML private Label welcomeText;
 
+  public void init(ViewHandler viewHandler, GuestModelManager modelManager, Region root)
+  {
+    this.modelManager = modelManager;
+    this.root = root;
+    this.viewHandler = viewHandler;
+  }
 
-   public void handleAction(ActionEvent e)
+
+
+  public void handleAction(ActionEvent e)
    {
      if (e.getSource() == CheckInButton)
      {
@@ -48,6 +62,12 @@ public class CheckInController
        String roomType = getRoomTypeValue();
 
        modelManager.addGuest(new Guest(name,email, dateOfBirth,phone,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
+
+       JOptionPane.showMessageDialog(null,"Booking Created !!!");
+     }
+     if (e.getSource() == GoBackButton)
+     {
+
      }
    }
 
@@ -78,4 +98,13 @@ public class CheckInController
     return roomType;
   }
 
+  public void reset()
+  {
+
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
 }
