@@ -15,8 +15,8 @@
    <children>
       <Pane prefHeight="100.0" prefWidth="640.0">
          <children>
-            <Button layoutX="516.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleAction" prefHeight="35.0" prefWidth="110.0" text="Exit" />
-            <ImageView fx:id="exitButton" fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="exitButton" layoutX="516.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleAction" prefHeight="35.0" prefWidth="110.0" text="Exit" />
+            <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="202.0" layoutY="33.0" text="The OverLook Hotel">
                <font>
                   <Font name="System Bold" size="25.0" />
