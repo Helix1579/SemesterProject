@@ -28,7 +28,7 @@ public class RoomModelManager
    * gets all the rooms in the Roomlist
    * @return the Roomlist.
    */
-  public RoomList getAllRooms()
+  public static RoomList getAllRooms()
   {
     RoomList allRooms = new RoomList();
 

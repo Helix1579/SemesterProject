@@ -8,6 +8,8 @@ import model.Guest;
 import model.GuestList;
 import model.GuestModelManager;
 
+import javax.swing.*;
+
 public class CancelController
 {
   private GuestModelManager modelManager;
@@ -31,8 +33,25 @@ public class CancelController
     this.root = root;
     this.viewHandler = viewHandler;
   }
+  public void eventHandler(ActionEvent e){
+    if(e.getSource() == ExitB)
+    {
+      System.exit(1);
+    }
+    else if (e.getSource() == BackB)
+    {
+      viewHandler.openView("Homepage");
+    }
+    else  if (e.getSource()== CancelB){
+      JOptionPane.showMessageDialog(null,"Cancel complete");
+    }
+
+  }
+
   public void reset()
   {
+
+
 
   }
 
