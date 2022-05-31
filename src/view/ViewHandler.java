@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import model.GuestModelManager;
+import model.RoomModelManager;
 
 import java.io.IOException;
 
@@ -24,8 +25,10 @@ public class ViewHandler
   private CheckInController check_inController;
   private CheckOutController checkOutController;
   private CancelController cancelController;
+  private AvailableController availableController;
 
   private GuestModelManager modelManager;
+  private RoomModelManager roomModelManager;
 
   /**
    *  Single Arguement consstructor initialising Viewhandler
@@ -35,6 +38,11 @@ public class ViewHandler
   public ViewHandler(GuestModelManager modelManager) throws IOException
   {
     this.modelManager = modelManager;
+    scene = new Scene(new Region());
+  }
+  public ViewHandler(RoomModelManager modelManager) throws IOException
+  {
+    this.roomModelManager = modelManager;
     scene = new Scene(new Region());
   }
 
@@ -70,7 +78,7 @@ public class ViewHandler
         root = loadGuestList();
         break;
       case "AvailableRooms":
-        //root = loadAvailableRooms();
+        root = loadAvailableRooms();
         break;
       case "GuestInfo":
         root = loadGuestInfoPage();
@@ -239,6 +247,29 @@ public class ViewHandler
     {
       cancelController.reset();
     }
-    return homepageController.getRoot();
+    return cancelController.getRoot();
+  }
+  public Region loadAvailableRooms()
+  {
+    if (availableController == null)
+    {
+      try
+      {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("AvailableRooms.fxml"));
+        Region root = loader.load();
+        availableController = loader.getController();
+        availableController.init(this, roomModelManager, root);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+    }
+    else
+    {
+      availableController.reset();
+    }
+    return availableController.getRoot();
   }
 }

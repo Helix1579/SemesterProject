@@ -7,7 +7,7 @@ package model;
  */
 public class Rooms
 {
-
+  private String Normal;
   private String King;
   private String Twin;
   private String SingleBed;
@@ -28,9 +28,9 @@ public class Rooms
    * @param RoomNumber the roomnumber to replace with
    * @param RoomPrice the roomprice to replace with
    */
-  public Rooms( String King , String Twin , String SingleBed , String DoubleBed ,String  TripleBed , String RoomType , int RoomNumber, int RoomPrice)
+  public Rooms(String Normal, String King , String Twin , String SingleBed , String DoubleBed ,String  TripleBed , String RoomType , int RoomNumber, int RoomPrice)
   {
-
+    this.Normal = Normal;
     this.King = King;
     this.Twin = Twin;
     this.SingleBed = SingleBed;
@@ -40,7 +40,10 @@ public class Rooms
     this.RoomNumber = RoomNumber;
     this.RoomPrice = RoomPrice;
   }
-
+  public String getNormal()
+  {
+    return Normal;
+  }
   /**
    *
    * @return the King
@@ -110,6 +113,7 @@ public class Rooms
    */
   public  int getRoomPrice(){return RoomPrice;}
 
+  public void setNormal(String normal) {this.Normal = normal;}
   /**\
    *
    * @param king the king to replace with
@@ -187,7 +191,7 @@ public class Rooms
 
     Rooms other = (Rooms) obj;
 
-    return  other.King == King && other.Twin == Twin && other.SingleBed ==SingleBed && other.DoubleBed == DoubleBed && other.TripleBed == TripleBed;
+    return other.Normal == Normal && other.King == King && other.Twin == Twin && other.SingleBed ==SingleBed && other.DoubleBed == DoubleBed && other.TripleBed == TripleBed;
   }
 
   /**
@@ -196,7 +200,7 @@ public class Rooms
    */
   public String toString()
   {
-    return   King + Twin + SingleBed + DoubleBed + TripleBed + " ";
+    return  Normal + King + Twin + SingleBed + DoubleBed + TripleBed +  " ";
   }
 
 }
