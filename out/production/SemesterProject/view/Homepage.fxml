@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="467.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomepageController">
+<AnchorPane prefHeight="500.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomepageController">
    <children>
       <FlowPane hgap="70.0" layoutX="13.0" layoutY="117.0" prefHeight="333.0" prefWidth="594.0" vgap="30.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
          <children>
