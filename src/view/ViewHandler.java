@@ -78,7 +78,7 @@ public class ViewHandler
         root = loadGuestList();
         break;
       case "AvailableRooms":
-        root = loadAvailableRooms();
+        //root = loadAvailableRooms();
         break;
       case "GuestInfo":
         root = loadGuestInfoPage();
@@ -249,6 +249,7 @@ public class ViewHandler
     }
     return cancelController.getRoot();
   }
+  /*
   public Region loadAvailableRooms()
   {
     if (availableController == null)
@@ -272,4 +273,5 @@ public class ViewHandler
     }
     return availableController.getRoot();
   }
+  */
 }
