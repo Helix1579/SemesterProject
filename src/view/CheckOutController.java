@@ -7,6 +7,7 @@ import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestList;
 import model.GuestModelManager;
+import model.RoomList;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -33,10 +34,11 @@ public class CheckOutController
   @FXML private TextField PhoneTF;
   @FXML private ComboBox<Guest> NameCB;
   @FXML private TextField RoomTypeTF;
-  @FXML private DatePicker CheckinDP;
-  @FXML private DatePicker CheckoutDP;
+  @FXML private DatePicker CheckInDP;
+  @FXML private DatePicker CheckOutDP;
   @FXML private CheckBox DiscountCB;
   @FXML private CheckBox SmokingCB;
+  private int price;
 
 
   /**
@@ -91,16 +93,15 @@ public class CheckOutController
         EmailTF.setText(temp.getEmail());
         PhoneTF.setText((temp.getPhoneNumber()));
         RoomTypeTF.setText(temp.getRoomType());
-        CheckinDP.setValue(temp.getCheckInDate());
+        CheckInDP.setValue(temp.getCheckInDate());
       }
     }
     else if (e.getSource() == CalcB)
     {
       int discount = 0;
-      int price = 0;
       int smoking = 0;
-      LocalDate checkIn = CheckinDP.getValue();
-      LocalDate checkOut = CheckoutDP.getValue();
+      LocalDate checkIn = CheckInDP.getValue();
+      LocalDate checkOut = CheckOutDP.getValue();
       int stay = Period.between(checkIn , checkOut).getDays();
       if (DiscountCB.isSelected())
       {
@@ -110,11 +111,21 @@ public class CheckOutController
       {
         smoking += 25;
       }
+      Guest temp = NameCB.getSelectionModel().getSelectedItem();
+
+      if ((temp != null))
+      {
+        price = setPrice(temp.getRoomType());
+      }
+      PriceTF.setText((price * stay) + smoking - discount + "");
     }
 
     else if(e.getSource() == CheckoutB)
     {
-
+      GuestList allGuest = modelManager.getAllGuest();
+      allGuest.removeGuest(NameCB.getSelectionModel().getSelectedItem());
+      modelManager.saveGuest(allGuest);
+      UpdateGuestBox();
     }
 
     else if(e.getSource() == ExitB)
@@ -126,6 +137,34 @@ public class CheckOutController
       viewHandler.openView("Homepage");
     }
 
+  }
+  public int setPrice(String type)
+  {
+    if (type.equals("SingleSuite"))
+    {
+      price += 259;
+    }
+    if (type.equals("DoubleSuite"))
+    {
+      price += 339;
+    }
+    if (type.equals("TripleSuite"))
+    {
+      price += 399;
+    }
+    if (type.equals("Normal"))
+    {
+      price += 129;
+    }
+    if (type.equals("King"))
+    {
+      price += 169;
+    }
+    if (type.equals("Twin"))
+    {
+      price += 169;
+    }
+    return price;
   }
 
   public void reset()

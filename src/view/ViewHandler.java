@@ -78,7 +78,7 @@ public class ViewHandler
         root = loadGuestList();
         break;
       case "AvailableRooms":
-        //root = loadAvailableRooms();
+        root = loadAvailableRooms();
         break;
       case "GuestInfo":
         root = loadGuestInfoPage();
@@ -249,7 +249,7 @@ public class ViewHandler
     }
     return cancelController.getRoot();
   }
-  /*
+
   public Region loadAvailableRooms()
   {
     if (availableController == null)
@@ -260,7 +260,7 @@ public class ViewHandler
         loader.setLocation(getClass().getResource("AvailableRooms.fxml"));
         Region root = loader.load();
         availableController = loader.getController();
-        availableController.init(this, roomModelManager, root);
+        availableController.init(this, root,roomModelManager);
       }
       catch (Exception e)
       {
@@ -273,5 +273,5 @@ public class ViewHandler
     }
     return availableController.getRoot();
   }
-  */
+
 }

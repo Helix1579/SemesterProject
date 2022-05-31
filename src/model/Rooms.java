@@ -15,7 +15,7 @@ public class Rooms
   private String TripleBed;
   private String RoomType;
   private int RoomNumber;
-  private  int RoomPrice;
+  private int RoomPrice;
 
   /**
    * multiple arguement constructor initializing room objects

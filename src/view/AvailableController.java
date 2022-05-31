@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
+import model.GuestModelManager;
 import model.RoomModelManager;
 import model.Rooms;
 import model.RoomList;
@@ -18,7 +19,8 @@ public class AvailableController extends Tab
   private ViewHandler viewHandler;
   private Region root;
   private Rooms rooms;
-  private RoomModelManager modelManager;
+  private GuestModelManager modelManager;
+  private RoomModelManager roomModelManager;
 
   @FXML private Button getAllRooms;
   @FXML private Button exitButton;
@@ -30,8 +32,9 @@ public class AvailableController extends Tab
 
   private ActionListener listener;
 
-  public void init(ViewHandler viewHandler, Rooms rooms, Region root)
+  public void init(ViewHandler viewHandler,  Region root ,RoomModelManager modelManager )
   {
+    roomModelManager = modelManager;
     this.rooms = rooms;
     this.root = root;
     this.viewHandler = viewHandler;
@@ -40,7 +43,7 @@ public class AvailableController extends Tab
 
   public void AllGuest(RoomModelManager modelManager)
   {
-    this.modelManager = modelManager;
+    roomModelManager = modelManager;
 
 
     roomNumberCol.setCellValueFactory(new PropertyValueFactory<Rooms, Integer>("RoomNumber"));
@@ -65,11 +68,22 @@ public class AvailableController extends Tab
   public void update()
   {
     allRoomsTable.getItems().clear();
-    RoomList rooms = modelManager.getAllRooms();
+    RoomList rooms = roomModelManager.getAllRooms();
 
     for (int i = 0; i < rooms.size(); i++)
     {
       allRoomsTable.getItems().add(rooms.get(i));
     }
+  }
+
+
+  public void reset()
+  {
+
+  }
+
+  public Region getRoot()
+  {
+    return root;
   }
 }
