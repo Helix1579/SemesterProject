@@ -101,7 +101,7 @@ public class GuestModelManager
    * @param checkOutDate the checkout date to replace with.
    * @param roomType the roomtype to replace with
    */
-  public  void changeGuestInformation(String name, String phoneNumber, String idProof,
+  public  void changeGuestInformation(String name, String email ,String phoneNumber, String idProof,
       LocalDate checkInDate, LocalDate checkOutDate, String roomType)
   {
     GuestList allGuest = getAllGuest();
@@ -113,6 +113,7 @@ public class GuestModelManager
       if (guest.getName().equals(name))
       {
         guest.setName(name);
+        guest.setEmail(email);
         guest.setPhoneNumber(phoneNumber);
         guest.setIdProof(idProof);
         guest.setCheckInDate(checkInDate);

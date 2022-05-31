@@ -102,7 +102,7 @@ public class GuestInformationController
     else if (e.getSource() == UpdateButton)
     {
       String name = NameTF.getText();
-      String address = EmailTF.getText();
+      String email = EmailTF.getText();
       String phoneNumber = PhoneNumberTF.getText();
       LocalDate checkIn = LocalDate.parse(
           CheckInDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
@@ -111,7 +111,7 @@ public class GuestInformationController
       String roomType = String.valueOf(RoomBox.getSelectionModel().getSelectedItem());
       String idProof = IDProofTF.getText();
 
-      modelManager.changeGuestInformation(name,phoneNumber,idProof,checkIn,checkOut,roomType);
+      modelManager.changeGuestInformation(name,email,phoneNumber,idProof,checkIn,checkOut,roomType);
       UpdateGuestBox();
     }
     else if (e.getSource() == ExitButton)
