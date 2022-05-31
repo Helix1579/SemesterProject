@@ -73,8 +73,8 @@
       <Button fx:id="BackB" layoutX="14.0" layoutY="431.0" mnemonicParsing="false" onAction="#eventHandler" prefHeight="25.0" prefWidth="73.0" text="Back" />
       <Button fx:id="CheckoutB" layoutX="553.0" layoutY="431.0" mnemonicParsing="false" onAction="#eventHandler" text="Check-Out" />
       <CheckBox fx:id="DiscountCB" layoutX="411.0" layoutY="367.0" mnemonicParsing="false" text="Discount" />
-      <DatePicker fx:id="CheckinDP" layoutX="332.0" layoutY="291.0" prefHeight="25.0" prefWidth="150.0" />
-      <DatePicker fx:id="CheckoutDP" layoutX="332.0" layoutY="329.0" prefHeight="25.0" prefWidth="150.0" />
+      <DatePicker fx:id="CheckInDP" layoutX="332.0" layoutY="291.0" prefHeight="25.0" prefWidth="150.0" />
+      <DatePicker fx:id="CheckOutDP" layoutX="332.0" layoutY="329.0" prefHeight="25.0" prefWidth="150.0" />
       <TextField fx:id="RoomTypeTF" layoutX="334.0" layoutY="249.0" />
       <CheckBox fx:id="SmokingCB" layoutX="484.0" layoutY="367.0" mnemonicParsing="false" text="Smoking" />
    </children>
