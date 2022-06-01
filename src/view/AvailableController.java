@@ -18,9 +18,7 @@ public class AvailableController extends Tab
 {
   private ViewHandler viewHandler;
   private Region root;
-  private Rooms rooms;
-  private GuestModelManager modelManager;
-  private RoomModelManager roomModelManager;
+  private RoomModelManager modelManager;
 
   @FXML private Button getAllRooms;
   @FXML private Button exitButton;
@@ -30,21 +28,18 @@ public class AvailableController extends Tab
   @FXML private TableColumn<Rooms, String> roomTypeCol;
   @FXML private TableColumn<Rooms, Integer> roomPriceCol;
   @FXML private Button backButton;
-  private ActionListener listener;
 
   public void init(ViewHandler viewHandler,  Region root ,RoomModelManager modelManager )
   {
-    roomModelManager = modelManager;
-    this.rooms = rooms;
+    this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
-    reload();
+    //reload();
   }
 
   public void AllGuest(RoomModelManager modelManager)
   {
-    roomModelManager = modelManager;
-
+    this.modelManager = modelManager;
 
     roomNumberCol.setCellValueFactory(new PropertyValueFactory<Rooms, Integer>("RoomNumber"));
     roomNumberCol.setPrefWidth(205);
@@ -59,7 +54,7 @@ public class AvailableController extends Tab
 
   public void reload()
   {
-    if ((modelManager != null))
+    if (modelManager != null)
     {
       update();
     }
@@ -68,7 +63,7 @@ public class AvailableController extends Tab
   public void update()
   {
     allRoomsTable.getItems().clear();
-    RoomList rooms = roomModelManager.getAllRooms();
+    RoomList rooms = modelManager.getAllRooms();
 
     for (int i = 0; i < rooms.size(); i++)
     {
@@ -79,7 +74,7 @@ public class AvailableController extends Tab
   {
     if (e.getSource() == getAllRooms)
     {
-      AllGuest(roomModelManager);
+      update();
     }
     if (e.getSource() == backButton)
     {

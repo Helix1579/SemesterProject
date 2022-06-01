@@ -44,7 +44,7 @@ public class GuestListController extends Tab
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
-    reload();
+    //reload();
   }
 
   /**
@@ -80,7 +80,7 @@ public class GuestListController extends Tab
     }
   }
 
-  private void update()
+  public void update()
   {
     allGuestTable.getItems().clear();
     GuestList guests = modelManager.getAllGuest();
@@ -106,24 +106,12 @@ public class GuestListController extends Tab
     {
       viewHandler.openView("Homepage");
     }
+    if (e.getSource() == getAllGuest)
+    {
+      update();
+    }
   }
 
-
-    public void handle(ActionEvent e)
-    {
-      if (e.getSource() == getAllGuest)
-      {
-        update();
-      }
-      else if (e.getSource() == exitButton)
-      {
-        System.exit(1);
-      }
-      else if (e.getSource() == backButton)
-      {
-        viewHandler.openView("Homepage");
-      }
-    }
   public Region getRoot()
   {
     return root;
