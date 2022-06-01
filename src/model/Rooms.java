@@ -19,9 +19,9 @@ public class Rooms
    */
   public Rooms(String roomNumber, String roomType, double roomPrice)
   {
-    this.RoomType = RoomType;
-    this.RoomNumber = RoomNumber;
-    this.RoomPrice = RoomPrice;
+    this.RoomType = roomType;
+    this.RoomNumber = roomNumber;
+    this.RoomPrice = roomPrice;
   }
   /**
    *
