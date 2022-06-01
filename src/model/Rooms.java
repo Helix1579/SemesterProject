@@ -7,93 +7,27 @@ package model;
  */
 public class Rooms
 {
-  private String Normal;
-  private String King;
-  private String Twin;
-  private String SingleBed;
-  private String DoubleBed;
-  private String TripleBed;
+  private String RoomNumber;
+  private String RoomPrice;
   private String RoomType;
-  private int RoomNumber;
-  private  int RoomPrice;
 
   /**
    * multiple arguement constructor initializing room objects
-   * @param King the king to replace with
-   * @param Twin the twin to replace with
-   * @param SingleBed the single bed to replace with
-   * @param DoubleBed the single double bed to replace with
-   * @param TripleBed the triple bed to replace with
-   * @param RoomType the rooomtype to replace with
-   * @param RoomNumber the roomnumber to replace with
-   * @param RoomPrice the roomprice to replace with
+   * @param roomType the rooomtype to replace with
+   * @param roomNumber the roomnumber to replace with
+   * @param roomPrice the roomprice to replace with
    */
-  public Rooms(String Normal, String King , String Twin , String SingleBed , String DoubleBed ,String  TripleBed , String RoomType , int RoomNumber, int RoomPrice)
+  public Rooms(String roomNumber, String roomType, String roomPrice)
   {
-    this.Normal = Normal;
-    this.King = King;
-    this.Twin = Twin;
-    this.SingleBed = SingleBed;
-    this.DoubleBed = DoubleBed;
-    this.TripleBed = TripleBed;
     this.RoomType = RoomType;
     this.RoomNumber = RoomNumber;
     this.RoomPrice = RoomPrice;
   }
-  public String getNormal()
-  {
-    return Normal;
-  }
-  /**
-   *
-   * @return the King
-   */
-  public String getKing()
-  {
-    return King;
-  }
-
-  /**
-   *
-   * @return the twin
-   */
-  public String getTwin()
-  {
-    return Twin;
-  }
-
-  /**
-   *
-   * @return the single bed
-   */
-  public String getSingleBed()
-  {
-    return SingleBed;
-  }
-
-  /**
-   *
-   * @return the double bed
-   */
-  public String getDoubleBed()
-  {
-    return DoubleBed;
-  }
-
-  /**
-   *
-   * @return the triple bed
-   */
-  public String getTripleBed()
-  {
-    return TripleBed;
-  }
-
   /**
    *
    * @return the roomno
    */
-  public int getRoomNo()
+  public String getRoomNo()
   {
     return RoomNumber;
   }
@@ -111,53 +45,13 @@ public class Rooms
    *
    * @return the room price
    */
-  public  int getRoomPrice(){return RoomPrice;}
-
-  public void setNormal(String normal) {this.Normal = normal;}
-  /**\
-   *
-   * @param king the king to replace with
-   */
-  public void setKing(String king) {this.King = king;}
-
-  /**
-   *
-   * @param twin thee twin to replace with
-   */
-  public void setTwin(String twin)
-  {
-    this.Twin = twin;
-  }
-
-  /**
-   *
-   * @param singleBed the singlebed to replace with
-   */
-  public void setSingleBed(String singleBed)
-  {
-    this.SingleBed = singleBed;
-  }
-
-  /**
-   *
-   * @param doubleBed the doublebed to replace with.
-   */
-  public void setDoubleBed(String doubleBed)
-  {
-    this.DoubleBed = doubleBed;
-  }
-
-  /**
-   *
-   * @param tripleBed the triplebed to replace with
-   */
-  public void setTripleBed(String tripleBed) {this.TripleBed = tripleBed;}
+  public String getRoomPrice(){return RoomPrice;}
 
   /**
    *
    * @param roomNumber the roomNumber to replace with.
    */
-  public void setRoomNo(int roomNumber)
+  public void setRoomNo(String  roomNumber)
   {
     this.RoomNumber = roomNumber;
   }
@@ -175,7 +69,7 @@ public class Rooms
    *
    * @param RoomPrice the roomPrice to replace with
    */
-  public void setRoomPrice(int RoomPrice){this.RoomPrice = RoomPrice;}
+  public void setRoomPrice(String RoomPrice){this.RoomPrice = RoomPrice;}
 
   /**
    *
@@ -191,7 +85,7 @@ public class Rooms
 
     Rooms other = (Rooms) obj;
 
-    return other.Normal == Normal && other.King == King && other.Twin == Twin && other.SingleBed ==SingleBed && other.DoubleBed == DoubleBed && other.TripleBed == TripleBed;
+    return other.RoomNumber.equals(RoomNumber) && other.RoomPrice.equals(RoomPrice) && other.RoomType.equals(RoomType);
   }
 
   /**
@@ -200,7 +94,7 @@ public class Rooms
    */
   public String toString()
   {
-    return  Normal + King + Twin + SingleBed + DoubleBed + TripleBed +  " ";
+    return  RoomNumber + RoomType + RoomPrice;
   }
 
 }

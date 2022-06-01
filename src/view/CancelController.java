@@ -20,6 +20,7 @@ public class CancelController
   @FXML Button SearchB;
   @FXML TextField NameTF;
   @FXML TextField PhoneTF;
+  @FXML TextField RoomNumberTF;
   @FXML TextField RoomTF;
   @FXML DatePicker CheckInDP;
   @FXML DatePicker CheckOutDP;
@@ -61,8 +62,39 @@ public class CancelController
       GuestCB.getSelectionModel().select(index);
     }
   }
-  public void searchHandle(ActionEvent e)
+  public void actionHandle(ActionEvent e)
   {
+    if (e.getSource() == SearchB)
+    {
+      Guest temp = GuestCB.getSelectionModel().getSelectedItem();
 
+      if (temp != null)
+      {
+        NameTF.setText(temp.getName());
+        PhoneTF.setText(temp.getPhoneNumber());
+        RoomNumberTF.setText(temp.getRoomNumber());
+        CheckInDP.setValue(temp.getCheckInDate());
+        CheckOutDP.setValue(temp.getCheckOutDate());
+      }
+    }
+    if (e.getSource() == ExitB)
+    {
+      System.exit(1);
+    }
+
+    if (e.getSource() == BackB)
+    {
+      viewHandler.openView("Homepage");
+    }
+
+    if (e.getSource() == CancelB)
+    {
+      //Guest temp = GuestCB.getSelectionModel().getSelectedItem();
+
+      GuestList allGuest = modelManager.getAllGuest();
+      allGuest.removeGuest(GuestCB.getSelectionModel().getSelectedItem());
+      modelManager.saveGuest(allGuest);
+      updateGuestBox();
+    }
   }
 }

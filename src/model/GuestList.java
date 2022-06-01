@@ -119,4 +119,8 @@ public class GuestList implements Serializable
     }
     return str;
   }
+  public void removeGuest(Guest guest)
+  {
+    guests.remove(guest);
+  }
 }

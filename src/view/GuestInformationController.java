@@ -34,7 +34,7 @@ public class GuestInformationController
   @FXML private Button UpdateButton;
   @FXML private Button ExitButton;
   @FXML private ComboBox<Guest> GuestBox;
-  @FXML private ComboBox<Rooms> RoomBox;
+  @FXML private TextField RoomNumberTF;
 
   /**
    * Requires to switch between different pages
@@ -89,11 +89,11 @@ public class GuestInformationController
         if(temp != null)
         {
           NameTF.setText(temp.getName());
-
+          EmailTF.setText(temp.getEmail());
           PhoneNumberTF.setText(temp.getPhoneNumber());
           CheckInDP.setValue(temp.getCheckInDate());
           CheckOutDP.setValue(temp.getCheckOutDate());
-          //RoomBox.setValue(temp.getRoomType());
+          RoomNumberTF.setText(temp.getRoomNumber());
           IDProofTF.setText(temp.getIdProof());
         }
       }
@@ -108,10 +108,10 @@ public class GuestInformationController
           CheckInDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
       LocalDate checkOut = LocalDate.parse(
           CheckOutDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
-      String roomType = String.valueOf(RoomBox.getSelectionModel().getSelectedItem());
+      String roomNumber = RoomNumberTF.getText();
       String idProof = IDProofTF.getText();
 
-      modelManager.changeGuestInformation(name,email,phoneNumber,idProof,checkIn,checkOut,roomType);
+      modelManager.changeGuestInformation(name,email,phoneNumber,idProof,checkIn,checkOut,roomNumber);
       UpdateGuestBox();
     }
     else if (e.getSource() == ExitButton)
