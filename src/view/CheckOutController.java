@@ -52,6 +52,7 @@ public class CheckOutController
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
+    UpdateGuestBox();
   }
 
   /**
@@ -61,6 +62,7 @@ public class CheckOutController
   {
     int index = NameCB.getSelectionModel().getSelectedIndex();
     NameCB.getItems().clear();
+
     GuestList guests = modelManager.getAllGuest();
     for(int i =0; i<guests.size();i++)
     {
@@ -94,6 +96,7 @@ public class CheckOutController
         PhoneTF.setText((temp.getPhoneNumber()));
         RoomTypeTF.setText(temp.getRoomType());
         CheckInDP.setValue(temp.getCheckInDate());
+        CheckOutDP.setValue(temp.getCheckOutDate());
       }
     }
     else if (e.getSource() == CalcB)
@@ -103,6 +106,7 @@ public class CheckOutController
       LocalDate checkIn = CheckInDP.getValue();
       LocalDate checkOut = CheckOutDP.getValue();
       int stay = Period.between(checkIn , checkOut).getDays();
+      System.out.println(stay);
       if (DiscountCB.isSelected())
       {
         discount += price*0.1;
@@ -115,7 +119,7 @@ public class CheckOutController
 
       if ((temp != null))
       {
-        price = setPrice(temp.getRoomType());
+        PriceTF.setText("");
       }
       PriceTF.setText((price * stay) + smoking - discount + "");
     }

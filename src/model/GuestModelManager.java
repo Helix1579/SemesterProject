@@ -78,7 +78,6 @@ public class GuestModelManager
    */
   public void saveGuest (GuestList guests)
   {
-    System.out.println(guests.get(0).getPhoneNumber());
     try
     {
       MyFileHandler.writeToBinaryFile(fileName, guests);
