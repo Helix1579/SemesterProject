@@ -35,7 +35,7 @@ public class GuestModelManager
 
     try
     {
-      allGuest = (GuestList)MyFileHandler.readFromBinaryFile("Guests.bin");
+      allGuest = (GuestList)MyFileHandler.readFromBinaryFile(fileName);
     }
     catch (FileNotFoundException e)
     {
@@ -78,6 +78,7 @@ public class GuestModelManager
    */
   public void saveGuest (GuestList guests)
   {
+    System.out.println(guests.get(0).getPhoneNumber());
     try
     {
       MyFileHandler.writeToBinaryFile(fileName, guests);
@@ -101,18 +102,17 @@ public class GuestModelManager
    * @param checkOutDate the checkout date to replace with.
    * @param roomType the roomtype to replace with
    */
-  public  void changeGuestInformation(String name, String email ,String phoneNumber, String idProof,
+  public void changeGuestInformation(String name, String email ,String phoneNumber, String idProof,
       LocalDate checkInDate, LocalDate checkOutDate, String roomType)
   {
     GuestList allGuest = getAllGuest();
 
     for (int i = 0; i < allGuest.size(); i++)
     {
-      Guest guest = getAllGuest().get(i);
+      Guest guest = allGuest.get(i);
 
       if (guest.getName().equals(name))
       {
-        guest.setName(name);
         guest.setEmail(email);
         guest.setPhoneNumber(phoneNumber);
         guest.setIdProof(idProof);

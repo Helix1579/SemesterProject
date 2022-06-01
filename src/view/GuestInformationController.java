@@ -110,7 +110,7 @@ public class GuestInformationController
       String idProof = IDProofTF.getText();
 
       modelManager.changeGuestInformation(name,email,phoneNumber,idProof,checkIn,checkOut,roomNumber);
-      JOptionPane.showMessageDialog(null, "Updated !");
+      //JOptionPane.showMessageDialog(null, "Updated !");
       UpdateGuestBox();
     }
     else if (e.getSource() == ExitButton)

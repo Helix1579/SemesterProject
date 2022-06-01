@@ -178,7 +178,6 @@ public class ViewHandler
   {
     if(guestListController == null)
     {
-      System.out.println("Hello !!");
       try
       {
         FXMLLoader loader = new FXMLLoader();
