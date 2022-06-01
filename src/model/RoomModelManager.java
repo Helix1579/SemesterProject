@@ -34,7 +34,7 @@ public class RoomModelManager
 
     try
     {
-      allRooms = (RoomList) MyFileHandler.readFromBinaryFile("rooms.bin");
+      allRooms = (RoomList) MyFileHandler.readFromBinaryFile("Rooms.bin");
     }
     catch (FileNotFoundException e)
     {

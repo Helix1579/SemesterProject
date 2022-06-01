@@ -47,13 +47,13 @@ public class AvailableController extends Tab
 
 
     roomNumberCol.setCellValueFactory(new PropertyValueFactory<Rooms, Integer>("RoomNumber"));
-    roomNumberCol.setPrefWidth(100);
+    roomNumberCol.setPrefWidth(205);
 
     roomTypeCol.setCellValueFactory(new PropertyValueFactory<Rooms, String>("RoomType"));
-    roomTypeCol.setPrefWidth(100);
+    roomTypeCol.setPrefWidth(205);
 
     roomPriceCol.setCellValueFactory(new PropertyValueFactory<Rooms, Integer>("RoomPrice"));
-    roomPriceCol.setPrefWidth(100);
+    roomPriceCol.setPrefWidth(205);
 
   }
 

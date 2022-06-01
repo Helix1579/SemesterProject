@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CancelController">
+<AnchorPane prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CancelController">
    <children>
       <Button fx:id="CancelB" layoutX="532.0" layoutY="425.0" mnemonicParsing="false" onAction="#actionHandle" text="Cancel Booking" />
       <Button fx:id="BackB" layoutX="20.0" layoutY="425.0" mnemonicParsing="false" onAction="#actionHandle" text="Back" />

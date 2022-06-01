@@ -126,7 +126,6 @@ public class GuestListController extends Tab
     }
   public Region getRoot()
   {
-    System.out.println("Hello !!");
     return root;
   }
 

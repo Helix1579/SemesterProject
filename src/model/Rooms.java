@@ -1,11 +1,13 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * a class containing all room objects
  * @author Dan Chisaru
  * @version 2.0
  */
-public class Rooms
+public class Rooms implements Serializable
 {
   private String RoomNumber;
   private double RoomPrice;
@@ -19,9 +21,9 @@ public class Rooms
    */
   public Rooms(String roomNumber, String roomType, double roomPrice)
   {
-    this.RoomType = RoomType;
-    this.RoomNumber = RoomNumber;
-    this.RoomPrice = RoomPrice;
+    this.RoomType = roomType;
+    this.RoomNumber = roomNumber;
+    this.RoomPrice = roomPrice;
   }
   /**
    *

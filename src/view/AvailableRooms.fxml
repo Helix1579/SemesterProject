@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AvailableController">
+<AnchorPane prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AvailableController">
     <children>
         <Pane prefHeight="100.0" prefWidth="640.0">
             <children>
@@ -33,9 +33,9 @@
         </Button>
         <TableView fx:id="allRoomsTable" layoutX="14.0" layoutY="100.0" prefHeight="320.0" prefWidth="615.0">
             <columns>
-                <TableColumn fx:id="RoomsNumber" prefWidth="211.199951171875" text="Room number" />
-                <TableColumn fx:id="RoomsType" prefWidth="97.60003662109375" text="Room type" />
-                <TableColumn fx:id="RoomPrice" prefWidth="92.0" text="Room price" />
+                <TableColumn fx:id="roomNumberCol" prefWidth="205.0" text="Room number" />
+                <TableColumn fx:id="roomTypeCol" prefWidth="205.0" text="Room type" />
+                <TableColumn fx:id="roomPriceCol" prefWidth="205.0" text="Room price" />
             </columns>
         </TableView>
         <Button fx:id="backButton" layoutX="14.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleAction" prefHeight="25.0" prefWidth="100.0" text="Back" />

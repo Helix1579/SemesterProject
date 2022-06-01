@@ -18,7 +18,7 @@ public class GuestModelManager
 
   /**
    * single arguement constructor initialising the filename
-   * @param fileName the filenmae to replace with.
+   * @param fileName the filename to replace with.
    */
   public GuestModelManager(String fileName)
   {
@@ -35,7 +35,7 @@ public class GuestModelManager
 
     try
     {
-      allGuest = (GuestList)MyFileHandler.readFromBinaryFile(fileName);
+      allGuest = (GuestList)MyFileHandler.readFromBinaryFile("Guests.bin");
     }
     catch (FileNotFoundException e)
     {
@@ -129,9 +129,11 @@ public class GuestModelManager
    * to add guest to guestlist
    * @param guest the guest to replace with.
    */
-  public void addGuest(Guest guest){
+  public void addGuest(Guest guest)
+  {
     GuestList allGuests = getAllGuest();
-        allGuests .add(guest);
+    allGuests.add(guest);
+    saveGuest(allGuests);
   }
 }
 

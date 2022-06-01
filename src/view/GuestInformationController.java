@@ -104,10 +104,8 @@ public class GuestInformationController
       String name = NameTF.getText();
       String email = EmailTF.getText();
       String phoneNumber = PhoneNumberTF.getText();
-      LocalDate checkIn = LocalDate.parse(
-          CheckInDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
-      LocalDate checkOut = LocalDate.parse(
-          CheckOutDP.getValue().format(DateTimeFormatter.ofPattern("MM-dd-yyyy")));
+      LocalDate checkIn = CheckInDP.getValue();
+      LocalDate checkOut = CheckOutDP.getValue();
       String roomNumber = RoomNumberTF.getText();
       String idProof = IDProofTF.getText();
 
