@@ -230,8 +230,7 @@ public class Guest implements Serializable
    */
   public String toString()
   {
-    return name + " , " + email +  " , " + dateOfBirth + " , " + phoneNumber + " , " + nationality +
-        " , " + idProof + " , " + checkInDate + " , " + checkOutDate + " , " + roomType + " , " + roomNumber;
+    return name;
   }
 
   /**

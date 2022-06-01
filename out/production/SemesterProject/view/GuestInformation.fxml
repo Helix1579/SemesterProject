@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -16,19 +16,19 @@
          <children>
             <Button fx:id="ExitButton" layoutX="516.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleAction" prefHeight="35.0" prefWidth="110.0" text="Exit" />
             <ImageView fx:id="Logo" fitHeight="100.0" fitWidth="150.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="Headder" layoutX="202.0" layoutY="34.0" text="The OverLook Hotel">
+            <Label layoutX="202.0" layoutY="34.0" text="The OverLook Hotel">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Label fx:id="NameLabel" layoutX="155.0" layoutY="160.0" prefHeight="31.0" prefWidth="150.0" text="Name : ">
+      <Label layoutX="155.0" layoutY="160.0" prefHeight="31.0" prefWidth="150.0" text="Name : ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="AddressLabel" layoutX="155.0" layoutY="190.0" prefHeight="31.0" prefWidth="150.0" text="E-Mail :">
+      <Label layoutX="155.0" layoutY="190.0" prefHeight="31.0" prefWidth="150.0" text="E-Mail :">
          <font>
             <Font size="15.0" />
          </font></Label>
@@ -50,28 +50,27 @@
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <Label fx:id="PhoneNumberLabel" layoutX="155.0" layoutY="220.0" prefHeight="31.0" prefWidth="150.0" text="Phone Number : ">
+      <Label layoutX="155.0" layoutY="220.0" prefHeight="31.0" prefWidth="150.0" text="Phone Number : ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="GuestNameLabel" layoutX="155.0" layoutY="107.0" prefHeight="25.0" prefWidth="100.0" text="Guest Name : ">
+      <Label layoutX="155.0" layoutY="107.0" prefHeight="25.0" prefWidth="100.0" text="Guest Name : ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="GuestBox" layoutX="256.0" layoutY="107.0" prefHeight="25.0" prefWidth="210.0" />
-      <Label fx:id="PhoneNumberLabel1" layoutX="155.0" layoutY="250.0" prefHeight="31.0" prefWidth="150.0" text="Check-in Date :">
+      <Label layoutX="155.0" layoutY="250.0" prefHeight="31.0" prefWidth="150.0" text="Check-in Date :">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="PhoneNumberLabel11" layoutX="155.0" layoutY="280.0" prefHeight="31.0" prefWidth="150.0" text="CHeck-Out Date :">
+      <Label layoutX="155.0" layoutY="280.0" prefHeight="31.0" prefWidth="150.0" text="CHeck-Out Date :">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="PhoneNumberLabel111" layoutX="155.0" layoutY="310.0" prefHeight="31.0" prefWidth="150.0" text="Room Number :">
+      <Label layoutX="155.0" layoutY="310.0" prefHeight="31.0" prefWidth="150.0" text="Room Number :">
          <font>
             <Font size="15.0" />
          </font>
@@ -81,7 +80,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Label fx:id="PhoneNumberLabel1111" layoutX="155.0" layoutY="340.0" prefHeight="31.0" prefWidth="150.0" text="Identity Proof :">
+      <Label layoutX="155.0" layoutY="340.0" prefHeight="31.0" prefWidth="150.0" text="Identity Proof :">
          <font>
             <Font size="15.0" />
          </font>
@@ -93,5 +92,6 @@
             <Font size="15.0" />
          </font>
       </TextField>
+      <ComboBox fx:id="GuestBox" layoutX="255.0" layoutY="107.0" prefHeight="26.0" prefWidth="200.0" />
    </children>
 </AnchorPane>

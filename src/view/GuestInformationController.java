@@ -7,10 +7,9 @@ import javafx.scene.layout.Region;
 import model.Guest;
 import model.GuestList;
 import model.GuestModelManager;
-import model.Rooms;
 
+import javax.swing.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Class containing all the action events happening at Update Guest Information page
@@ -47,6 +46,7 @@ public class GuestInformationController
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
+    UpdateGuestBox();
   }
 
 
@@ -110,6 +110,7 @@ public class GuestInformationController
       String idProof = IDProofTF.getText();
 
       modelManager.changeGuestInformation(name,email,phoneNumber,idProof,checkIn,checkOut,roomNumber);
+      JOptionPane.showMessageDialog(null, "Updated !");
       UpdateGuestBox();
     }
     else if (e.getSource() == ExitButton)

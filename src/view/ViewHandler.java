@@ -35,14 +35,10 @@ public class ViewHandler
    * @param modelManager the modelmanager to replace with
    * @throws IOException Constructs an IOException with null as its error detail message.
    */
-  public ViewHandler(GuestModelManager modelManager) throws IOException
+  public ViewHandler(GuestModelManager modelManager, RoomModelManager roomModelManager) throws IOException
   {
     this.modelManager = modelManager;
-    scene = new Scene(new Region());
-  }
-  public ViewHandler(RoomModelManager modelManager) throws IOException
-  {
-    this.roomModelManager = modelManager;
+    this.roomModelManager = roomModelManager;
     scene = new Scene(new Region());
   }
 
