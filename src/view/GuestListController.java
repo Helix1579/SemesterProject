@@ -115,7 +115,7 @@ public class GuestListController extends Tab
     }
     try
     {
-      FileOutputStream fout = new FileOutputStream("website.txt");
+      FileOutputStream fout = new FileOutputStream("../website.txt");
       PrintWriter write = new PrintWriter(fout);
       write.println("<?xml version="+"1.0"+" encoding="+"UTF-8"+"?>");
       write.println("<rooms>");
