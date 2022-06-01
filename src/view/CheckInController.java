@@ -67,14 +67,7 @@ public class CheckInController
 
        modelManager.addGuest(new Guest(name,email, dateOfBirth,phone,nationality,id,CheckInDate,CheckOutDate,roomType,roomNumber));
      }
-     if (e.getSource() == backButton)
-     {
-       viewHandler.openView("Homepage");
-     }
-     if (e.getSource() == exitButton)
-     {
-       System.exit(1);
-     }
+
    }
 
   /**
