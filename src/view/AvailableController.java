@@ -29,7 +29,7 @@ public class AvailableController extends Tab
   @FXML private TableColumn<Rooms, Integer> roomNumberCol;
   @FXML private TableColumn<Rooms, String> roomTypeCol;
   @FXML private TableColumn<Rooms, Integer> roomPriceCol;
-
+  @FXML private Button backButton;
   private ActionListener listener;
 
   public void init(ViewHandler viewHandler,  Region root ,RoomModelManager modelManager )
@@ -77,7 +77,18 @@ public class AvailableController extends Tab
   }
   public void handleAction(ActionEvent e)
   {
-
+    if (e.getSource() == getAllRooms)
+    {
+      AllGuest(roomModelManager);
+    }
+    if (e.getSource() == backButton)
+    {
+      viewHandler.openView("Homepage");
+    }
+    if (e.getSource() == exitButton)
+    {
+      System.exit(1);
+    }
   }
 
 
