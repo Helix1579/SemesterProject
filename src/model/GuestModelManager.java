@@ -121,7 +121,6 @@ public class GuestModelManager
         guest.setRoomType(roomType);
       }
     }
-
     saveGuest(allGuest);
   }
 

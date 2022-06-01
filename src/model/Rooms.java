@@ -9,9 +9,9 @@ import java.io.Serializable;
  */
 public class Rooms implements Serializable
 {
-  private String RoomNumber;
-  private double RoomPrice;
-  private String RoomType;
+  private String roomNumber;
+  private double roomPrice;
+  private String roomType;
 
   /**
    * multiple arguement constructor initializing room objects
@@ -21,17 +21,17 @@ public class Rooms implements Serializable
    */
   public Rooms(String roomNumber, String roomType, double roomPrice)
   {
-    this.RoomType = roomType;
-    this.RoomNumber = roomNumber;
-    this.RoomPrice = roomPrice;
+    this.roomType = roomType;
+    this.roomNumber = roomNumber;
+    this.roomPrice = roomPrice;
   }
   /**
    *
    * @return the roomno
    */
-  public String getRoomNo()
+  public String getRoomNumber()
   {
-    return RoomNumber;
+    return roomNumber;
   }
 
   /**
@@ -40,22 +40,22 @@ public class Rooms implements Serializable
    */
   public String getRoomType()
   {
-    return RoomType;
+    return roomType;
   }
 
   /**
    *
    * @return the room price
    */
-  public double getRoomPrice(){return RoomPrice;}
+  public double getRoomPrice(){return roomPrice;}
 
   /**
    *
    * @param roomNumber the roomNumber to replace with.
    */
-  public void setRoomNo(String  roomNumber)
+  public void setRoomNumber(String  roomNumber)
   {
-    this.RoomNumber = roomNumber;
+    this.roomNumber = roomNumber;
   }
 
   /**
@@ -64,14 +64,14 @@ public class Rooms implements Serializable
    */
   public void setRoomType(String roomType)
   {
-    this.RoomType = roomType;
+    this.roomType = roomType;
   }
 
   /**
    *
    * @param RoomPrice the roomPrice to replace with
    */
-  public void setRoomPrice(double RoomPrice){this.RoomPrice = RoomPrice;}
+  public void setRoomPrice(double RoomPrice){this.roomPrice = RoomPrice;}
 
   /**
    *
@@ -87,7 +87,7 @@ public class Rooms implements Serializable
 
     Rooms other = (Rooms) obj;
 
-    return other.RoomNumber.equals(RoomNumber) && other.RoomPrice == RoomPrice && other.RoomType.equals(RoomType);
+    return other.roomNumber.equals(roomNumber) && other.roomPrice == roomPrice && other.roomType.equals(roomType);
   }
 
   /**
@@ -96,7 +96,7 @@ public class Rooms implements Serializable
    */
   public String toString()
   {
-    return  RoomNumber + RoomType + RoomPrice;
+    return  roomNumber + roomType + roomPrice;
   }
 
 }

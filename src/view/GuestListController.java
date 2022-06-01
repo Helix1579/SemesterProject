@@ -44,16 +44,6 @@ public class GuestListController extends Tab
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
-    //reload();
-  }
-
-  /**
-   * Gets all the guest objects containing guest information from the Guestlist
-   * @param modelManager the modelmanager to replace with
-   */
-  public void AllGuest(GuestModelManager modelManager)
-  {
-    this.modelManager = modelManager;
 
     nameCol.setCellValueFactory(new PropertyValueFactory<Guest, String>("name"));
     nameCol.setPrefWidth(100);
@@ -69,15 +59,6 @@ public class GuestListController extends Tab
 
     phNumCol.setCellValueFactory(new PropertyValueFactory<Guest, String>("phoneNumber"));
     phNumCol.setPrefWidth(100);
-  }
-
-
-  private void reload()
-  {
-    if ((modelManager != null))
-    {
-      update();
-    }
   }
 
   public void update()

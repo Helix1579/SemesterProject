@@ -23,10 +23,9 @@ public class AvailableController extends Tab
   @FXML private Button getAllRooms;
   @FXML private Button exitButton;
   @FXML private TableView<Rooms> allRoomsTable;
-  private TableView.TableViewSelectionModel selectionModel;
-  @FXML private TableColumn<Rooms, Integer> roomNumberCol;
+  @FXML private TableColumn<Rooms, String > roomNumberCol;
   @FXML private TableColumn<Rooms, String> roomTypeCol;
-  @FXML private TableColumn<Rooms, Integer> roomPriceCol;
+  @FXML private TableColumn<Rooms, Double> roomPriceCol;
   @FXML private Button backButton;
 
   public void init(ViewHandler viewHandler,  Region root ,RoomModelManager modelManager )
@@ -34,30 +33,14 @@ public class AvailableController extends Tab
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
-    //reload();
-  }
+    roomNumberCol.setCellValueFactory(new PropertyValueFactory<Rooms, String>("roomNumber"));
+     roomNumberCol.setPrefWidth(205);
 
-  public void AllGuest(RoomModelManager modelManager)
-  {
-    this.modelManager = modelManager;
-
-    roomNumberCol.setCellValueFactory(new PropertyValueFactory<Rooms, Integer>("RoomNumber"));
-    roomNumberCol.setPrefWidth(205);
-
-    roomTypeCol.setCellValueFactory(new PropertyValueFactory<Rooms, String>("RoomType"));
+    roomTypeCol.setCellValueFactory(new PropertyValueFactory<Rooms, String>("roomType"));
     roomTypeCol.setPrefWidth(205);
 
-    roomPriceCol.setCellValueFactory(new PropertyValueFactory<Rooms, Integer>("RoomPrice"));
+    roomPriceCol.setCellValueFactory(new PropertyValueFactory<Rooms, Double>("roomPrice"));
     roomPriceCol.setPrefWidth(205);
-
-  }
-
-  public void reload()
-  {
-    if (modelManager != null)
-    {
-      update();
-    }
   }
 
   public void update()
@@ -69,7 +52,9 @@ public class AvailableController extends Tab
     {
       allRoomsTable.getItems().add(rooms.get(i));
     }
+
   }
+
   public void handleAction(ActionEvent e)
   {
     if (e.getSource() == getAllRooms)
