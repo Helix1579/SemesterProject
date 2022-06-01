@@ -74,8 +74,8 @@ public class InitialData
     }
     try
     {
-      MyFileHandler.writeToBinaryFile("guests.bin", guests);
-      MyFileHandler.writeToBinaryFile("rooms.bin", rooms);
+      MyFileHandler.writeToBinaryFile("Guests.bin", guests);
+      MyFileHandler.writeToBinaryFile("Rooms.bin", rooms);
     }
     catch (FileNotFoundException e)
     {
