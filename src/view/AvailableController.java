@@ -33,8 +33,9 @@ public class AvailableController extends Tab
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
+
     roomNumberCol.setCellValueFactory(new PropertyValueFactory<Rooms, String>("roomNumber"));
-     roomNumberCol.setPrefWidth(205);
+    roomNumberCol.setPrefWidth(205);
 
     roomTypeCol.setCellValueFactory(new PropertyValueFactory<Rooms, String>("roomType"));
     roomTypeCol.setPrefWidth(205);

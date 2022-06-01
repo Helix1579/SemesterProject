@@ -6,11 +6,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
-import model.Guest;
-import model.GuestList;
-import model.GuestModelManager;
+import model.*;
 
+import javax.swing.*;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *  Class containing all the action events happening at GuestList page
@@ -22,6 +24,7 @@ public class GuestListController extends Tab
   private ViewHandler viewHandler;
   private Region root;
   private GuestModelManager modelManager;
+  private RoomModelManager roomModelManager;
 
   @FXML private Button getAllGuest;
   @FXML private Button exitButton;
@@ -90,6 +93,7 @@ public class GuestListController extends Tab
     if (e.getSource() == getAllGuest)
     {
       update();
+      updateWebsite();
     }
   }
 
@@ -100,5 +104,34 @@ public class GuestListController extends Tab
 
   public void reset()
   {
+  }
+
+  public void updateWebsite()
+  {
+    RoomList list = roomModelManager.getAllRooms();
+    for (int i = 0; i < list.size(); i++)
+    {
+      list.add(new Rooms(list.get(i).getRoomNumber(), list.get(i).getRoomType() , list.get(i).getRoomPrice()));
+    }
+    try
+    {
+      FileOutputStream fout = new FileOutputStream("website.txt",true);
+      PrintWriter write = new PrintWriter(fout);
+      write.println("<?xml version="+"1.0"+" encoding="+"UTF-8"+"?>");
+      write.println("<rooms>");
+      for (int i = 0; i < list.size(); i++)
+      {
+        write.println("<allRooms>");
+        write.println("<roomNumber>" + list.get(i).getRoomNumber() + "</roomNumber");
+        write.println("<roomType>" + list.get(i).getRoomType() + "</roomType");
+        write.println("<roomPrice>" + list.get(i).getRoomPrice() + "</roomPrice");
+        write.println("</allRooms>");
+      }
+      write.println("</rooms>");
+    }
+    catch (Exception e)
+    {
+      JOptionPane.showMessageDialog(null, e.getMessage());
+    }
   }
 }
