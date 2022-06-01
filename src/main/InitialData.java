@@ -62,7 +62,8 @@ public class InitialData
         String[] tempArray = temp.split(" , ");
         String roomNumber = tempArray[0];
         String roomType = tempArray[1];
-        String roomPrice = tempArray[2];
+        String roomPriceTemp = tempArray[2];
+        double roomPrice = Double.parseDouble(roomPriceTemp);
 
         rooms.add(new Rooms(roomNumber, roomType, roomPrice));
       }

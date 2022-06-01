@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GuestListController">
+<AnchorPane prefHeight="470.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AvailableController">
     <children>
         <Pane prefHeight="100.0" prefWidth="640.0">
             <children>
@@ -26,7 +26,7 @@
                 </Button>
             </children>
         </Pane>
-        <Button fx:id="getAllRooms" layoutX="266.0" layoutY="424.0" mnemonicParsing="false" onAction="#handle" text="Get All Rooms">
+        <Button fx:id="getAllRooms" layoutX="266.0" layoutY="424.0" mnemonicParsing="false" onAction="#handleAction" text="Get All Rooms">
             <font>
                 <Font size="15.0" />
             </font>

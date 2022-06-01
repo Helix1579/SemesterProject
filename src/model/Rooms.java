@@ -8,7 +8,7 @@ package model;
 public class Rooms
 {
   private String RoomNumber;
-  private String RoomPrice;
+  private double RoomPrice;
   private String RoomType;
 
   /**
@@ -17,7 +17,7 @@ public class Rooms
    * @param roomNumber the roomnumber to replace with
    * @param roomPrice the roomprice to replace with
    */
-  public Rooms(String roomNumber, String roomType, String roomPrice)
+  public Rooms(String roomNumber, String roomType, double roomPrice)
   {
     this.RoomType = RoomType;
     this.RoomNumber = RoomNumber;
@@ -45,7 +45,7 @@ public class Rooms
    *
    * @return the room price
    */
-  public String getRoomPrice(){return RoomPrice;}
+  public double getRoomPrice(){return RoomPrice;}
 
   /**
    *
@@ -69,7 +69,7 @@ public class Rooms
    *
    * @param RoomPrice the roomPrice to replace with
    */
-  public void setRoomPrice(String RoomPrice){this.RoomPrice = RoomPrice;}
+  public void setRoomPrice(double RoomPrice){this.RoomPrice = RoomPrice;}
 
   /**
    *
@@ -85,7 +85,7 @@ public class Rooms
 
     Rooms other = (Rooms) obj;
 
-    return other.RoomNumber.equals(RoomNumber) && other.RoomPrice.equals(RoomPrice) && other.RoomType.equals(RoomType);
+    return other.RoomNumber.equals(RoomNumber) && other.RoomPrice == RoomPrice && other.RoomType.equals(RoomType);
   }
 
   /**
