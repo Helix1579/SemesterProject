@@ -129,9 +129,11 @@ public class GuestModelManager
    * to add guest to guestlist
    * @param guest the guest to replace with.
    */
-  public void addGuest(Guest guest){
+  public void addGuest(Guest guest)
+  {
     GuestList allGuests = getAllGuest();
-        allGuests .add(guest);
+    allGuests.add(guest);
+    saveGuest(allGuests);
   }
 }
 
