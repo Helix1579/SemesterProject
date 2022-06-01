@@ -31,6 +31,7 @@ public class CancelController
     this.modelManager = modelManager;
     this.root = root;
     this.viewHandler = viewHandler;
+    updateGuestBox();
   }
   public void reset()
   {

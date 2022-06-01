@@ -33,7 +33,7 @@ public class CheckOutController
   @FXML private TextField PriceTF;
   @FXML private TextField PhoneTF;
   @FXML private ComboBox<Guest> NameCB;
-  @FXML private TextField RoomTypeTF;
+  @FXML private TextField RoomNumberTF;
   @FXML private DatePicker CheckInDP;
   @FXML private DatePicker CheckOutDP;
   @FXML private CheckBox DiscountCB;
@@ -94,7 +94,7 @@ public class CheckOutController
         NameTF.setText(temp.getName());
         EmailTF.setText(temp.getEmail());
         PhoneTF.setText((temp.getPhoneNumber()));
-        RoomTypeTF.setText(temp.getRoomType());
+        RoomNumberTF.setText(temp.getRoomNumber());
         CheckInDP.setValue(temp.getCheckInDate());
         CheckOutDP.setValue(temp.getCheckOutDate());
       }
@@ -105,8 +105,9 @@ public class CheckOutController
       int smoking = 0;
       LocalDate checkIn = CheckInDP.getValue();
       LocalDate checkOut = CheckOutDP.getValue();
+
       int stay = Period.between(checkIn , checkOut).getDays();
-      System.out.println(stay);
+
       if (DiscountCB.isSelected())
       {
         discount += price*0.1;

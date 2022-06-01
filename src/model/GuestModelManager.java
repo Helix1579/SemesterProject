@@ -18,7 +18,7 @@ public class GuestModelManager
 
   /**
    * single arguement constructor initialising the filename
-   * @param fileName the filename to replace with.
+   * @param fileName the filenmae to replace with.
    */
   public GuestModelManager(String fileName)
   {
@@ -101,7 +101,7 @@ public class GuestModelManager
    * @param checkOutDate the checkout date to replace with.
    * @param roomType the roomtype to replace with
    */
-  public void changeGuestInformation(String name, String email ,String phoneNumber, String idProof,
+  public  void changeGuestInformation(String name, String email ,String phoneNumber, String idProof,
       LocalDate checkInDate, LocalDate checkOutDate, String roomType)
   {
     GuestList allGuest = getAllGuest();
@@ -127,11 +127,9 @@ public class GuestModelManager
    * to add guest to guestlist
    * @param guest the guest to replace with.
    */
-  public void addGuest(Guest guest)
-  {
+  public void addGuest(Guest guest){
     GuestList allGuests = getAllGuest();
-    allGuests.add(guest);
-    saveGuest(allGuests);
+        allGuests.add(guest);
   }
 }
 
